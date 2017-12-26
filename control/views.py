@@ -6,4 +6,6 @@ from django.template import loader
 # Create your views here.
 
 def index(request):
-    return HttpResponse("Hello World!")
+    template = loader.get_template('control/index.html')
+    context = {}
+    return HttpResponse(template.render(context, request))
