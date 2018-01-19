@@ -1,14 +1,24 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
-<link rel='shortcut icon' type='image/x-icon' href='{% static "control/img/favicon.ico" %}' />
+<html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
-    <meta charset="UTF-8">
-    <title>PiDrone</title>
+    <meta charset="utf-8">
+    <link rel='shortcut icon' type='image/x-icon' href='{% static "control/img/favicon.ico" %}'/>
+    <title>{% block title %}PiDrone{% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="{% static 'control/css/base.css' %}">
+    {#    <link rel="stylesheet" type="text/css" href="{% static 'css/jquery-ui.css' %}">#}
+    {#    <link rel="stylesheet" type="text/css" href="{% static 'css/jquery-ui.structure.css' %}">#}
+    {% block stylesheet %}{% endblock %}
 </head>
 <body>
+{#<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>#}
+{#<script src="{% static 'js/jquery-ui.js' %}"></script>#}
+{#<script src="{% static 'js/underscore-min.js' %}"></script>#}
+{#<script src="{% static 'control/js/app.js' %}"></script>#}
+{% block javascript %}{% endblock %}
+{% block content %}
+{% endblock %}
 
 </body>
 </html>
