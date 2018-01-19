@@ -2,14 +2,35 @@
 {% load static %}
 
 {% block javascript %}
-    <script src="{% static 'control/js/three.min.js' %}"></script>
-    <script src="{% static 'control/js/threex.keyboardstate.js' %}"></script>
-    <script src="{% static 'control/js/virtualjoystick.js' %}"></script>
-    <script src="{% static 'control/js/joystick.js' %}"></script>
+    {#        <script src="{% static 'control/js/three.min.js' %}"></script>#}
+    {#        <script src="{% static 'control/js/threex.keyboardstate.js' %}"></script>#}
+    {#        <script src="{% static 'control/js/virtualjoystick.js' %}"></script>#}
+    {#        <script src="{% static 'control/js/joystick.js' %}"></script>#}
+
+    <script src="{% static 'control/js/jquery-1.11.2.min.js' %}"></script>
+    <script src="{% static 'control/js/underscore-min.js' %}"></script>
+    <script src="{% static 'control/js/backbone-min.js' %}"></script>
+    <script src="{% static 'control/js/joystick_view.js' %}"></script>
+    <script src="{% static 'control/js/joystick_handle.js' %}"></script>
+
 {% endblock %}
 
 {% block content %}
-    <span id="result"></span>
+    {#    <span id="result"></span>#}
+
+    <script type="text/html" id="joystick-view">
+        <canvas id="joystickCanvas" width="<%= squareSize %>" height="<%= squareSize %>"
+                style="width: <%= squareSize %>px; height: <%= squareSize %>px;">
+        </canvas>
+    </script>
+
+    <div id="joystickContent">
+    </div>
+    <div>
+        x: <span id="xVal"></span><br/>
+        y: <span id="yVal"></span><br/>
+    </div>
+
 {% endblock %}
 
 
