@@ -1,23 +1,17 @@
 {% extends 'control/base.html' %}
 {% load static %}
 
-
 {% block javascript %}
-    <script src="http://threejs.org/build/three.min.js"></script>
-    <script src="http://jeromeetienne.github.io/threex.keyboardstate/threex.keyboardstate.js"></script>
+    <script src="{% static 'control/js/three.min.js' %}"></script>
+    <script src="{% static 'control/js/threex.keyboardstate.js' %}"></script>
     <script src="{% static 'control/js/virtualjoystick.js' %}"></script>
+    <script src="{% static 'control/js/joystick.js' %}"></script>
 {% endblock %}
+
 {% block content %}
-    <script>
-        var joystick = new VirtualJoystick({
-            mouseSupport: true,
-            stationaryBase: true,
-            baseX: 200,
-            baseY: 200,
-            limitStickTravel: true,
-            stickRadius: 50
-        });
-    </script>
+    <span id="result"></span>
 {% endblock %}
+
+
 
 
