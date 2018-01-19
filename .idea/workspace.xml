@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8f2e16a9-54f4-428d-8df5-e2b3ad88c9cb" name="Default" comment="">
+    <list default="true" id="8f2e16a9-54f4-428d-8df5-e2b3ad88c9cb" name="Default" comment="Initial commit">
+      <change beforePath="" afterPath="$PROJECT_DIR$/control/static/control/img/button.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/control/static/control/img/canvas.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/control/static/control/js/backbone-min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/control/static/control/js/joystick_view.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/control/static/control/js/jquery-1.11.2.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/control/static/control/js/underscore-min.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/control/templates/control/base.html" afterPath="$PROJECT_DIR$/control/templates/control/base.html" />
-      <change beforePath="$PROJECT_DIR$/control/templates/control/index.html" afterPath="$PROJECT_DIR$/control/templates/control/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -66,8 +70,8 @@
       <file leaf-file-name="joystick_view.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/control/static/control/js/joystick_view.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="25" column="37" lean-forward="true" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+            <state relative-caret-position="255">
+              <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -623,7 +627,14 @@
       <option name="project" value="LOCAL" />
       <updated>1516402852177</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Initial commit">
+      <created>1516403417189</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1516403417189</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -994,8 +1005,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/control/static/control/js/joystick_view.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="25" column="37" lean-forward="true" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+        <state relative-caret-position="255">
+          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding />
         </state>
       </provider>
