@@ -3,6 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="8f2e16a9-54f4-428d-8df5-e2b3ad88c9cb" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/control/static/control/img/button.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/control/static/control/img/canvas.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/control/static/control/js/backbone-min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/control/static/control/js/joystick.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/control/static/control/js/joystick_handle.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/control/static/control/js/joystick_view.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/control/static/control/js/three.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/control/static/control/js/threex.keyboardstate.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/control/static/control/js/underscore-min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/control/static/control/js/virtualjoystick.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/control/templates/control/base.html" afterPath="$PROJECT_DIR$/control/templates/control/base.html" />
+      <change beforePath="$PROJECT_DIR$/control/templates/control/index.html" afterPath="$PROJECT_DIR$/control/templates/control/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,146 +46,39 @@
       <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/control/templates/control/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="70" lean-forward="false" selection-start-line="18" selection-start-column="70" selection-end-line="18" selection-end-column="70" />
+            <state relative-caret-position="255">
+              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".eslintrc" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/control/static/control/yoannmoinet-nipplejs-2a1914e/test/.eslintrc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/control/static/control/yoannmoinet-nipplejs-2a1914e/test/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3284">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/control/templates/control/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="9" lean-forward="false" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+            <state relative-caret-position="214">
+              <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="joystick_handle.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/control/static/control/js/joystick_handle.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="7" lean-forward="false" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-              <folding>
-                <marker date="1516893686489" expanded="true" signature="30:445" ph="{...}" />
-                <marker date="1516893686489" expanded="true" signature="101:261" ph="{...}" />
-                <marker date="1516893686489" expanded="true" signature="198:250" ph="{...}" />
-                <marker date="1516893686489" expanded="true" signature="315:350" ph="{...}" />
-                <marker date="1516893686489" expanded="true" signature="406:441" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="joystick_view.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/control/static/control/js/joystick_view.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="25" lean-forward="false" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
-              <folding>
-                <marker date="1516893803443" expanded="true" signature="131:235" ph="{...}" />
-                <marker date="1516893803443" expanded="true" signature="274:6594" ph="{...}" />
-                <marker date="1516893803443" expanded="true" signature="288:493" ph="{&quot;touchstart&quot;: &quot;startControl&quot;...}" />
-                <marker date="1516893803443" expanded="true" signature="553:1498" ph="{...}" />
-                <marker date="1516893803443" expanded="true" signature="1069:1130" ph="{...}" />
-                <marker date="1516893803443" expanded="true" signature="1226:1310" ph="{...}" />
-                <marker date="1516893803443" expanded="true" signature="1404:1490" ph="{...}" />
-                <marker date="1516893803443" expanded="true" signature="1545:1953" ph="{...}" />
-                <marker date="1516893803443" expanded="true" signature="1632:1910" ph="{...}" />
-                <marker date="1516893803443" expanded="true" signature="1757:1850" ph="{...}" />
-                <marker date="1516893803443" expanded="true" signature="1983:2132" ph="{...}" />
-                <marker date="1516893803443" expanded="true" signature="2041:2126" ph="{...}" />
-                <marker date="1516893803443" expanded="true" signature="2165:2201" ph="{...}" />
-                <marker date="1516893803443" expanded="true" signature="2232:2339" ph="{...}" />
-                <marker date="1516893803443" expanded="true" signature="2364:3173" ph="{...}" />
-                <marker date="1516893803443" expanded="true" signature="2400:2431" ph="{...}" />
-                <marker date="1516893803443" expanded="true" signature="2558:3022" ph="{...}" />
-                <marker date="1516893803443" expanded="true" signature="2711:2887" ph="{...}" />
-                <marker date="1516893803443" expanded="true" signature="3028:3097" ph="{...}" />
-                <marker date="1516893803443" expanded="true" signature="3205:3584" ph="{...}" />
-                <marker date="1516893803443" expanded="true" signature="3333:3388" ph="{...}" />
-                <marker date="1516893803443" expanded="true" signature="3425:3480" ph="{...}" />
-                <marker date="1516893803443" expanded="true" signature="3624:3959" ph="{...}" />
-                <marker date="1516893803443" expanded="true" signature="3735:3783" ph="{...}" />
-                <marker date="1516893803443" expanded="true" signature="3877:3924" ph="{...}" />
-                <marker date="1516893803443" expanded="true" signature="3993:4413" ph="{...}" />
-                <marker date="1516893803443" expanded="true" signature="4137:4195" ph="{...}" />
-                <marker date="1516893803443" expanded="true" signature="4220:4278" ph="{...}" />
-                <marker date="1516893803443" expanded="true" signature="4446:4792" ph="{...}" />
-                <marker date="1516893803443" expanded="true" signature="4530:4565" ph="{...}" />
-                <marker date="1516893803443" expanded="true" signature="4619:4746" ph="{...}" />
-                <marker date="1516893803443" expanded="true" signature="4698:4736" ph="{...}" />
-                <marker date="1516893803443" expanded="true" signature="4832:5023" ph="{...}" />
-                <marker date="1516893803443" expanded="true" signature="4965:5017" ph="{&quot;x&quot;: newX...}" />
-                <marker date="1516893803443" expanded="true" signature="5064:5213" ph="{...}" />
-                <marker date="1516893803443" expanded="true" signature="5085:5132" ph="{...}" />
-                <marker date="1516893803443" expanded="true" signature="5243:6278" ph="{...}" />
-                <marker date="1516893803443" expanded="true" signature="5574:5605" ph="{...}" />
-                <marker date="1516893803443" expanded="true" signature="6302:6592" ph="{...}" />
-                <marker date="1516893803443" expanded="true" signature="6329:6380" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/control/static/control/css/base.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="1" lean-forward="false" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="canvas.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/control/static/control/img/canvas.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="button.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/control/static/control/img/button.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pidrone/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2057">
-              <caret line="121" column="0" lean-forward="false" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="backbone-min.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/control/static/control/js/backbone-min.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="904" lean-forward="false" selection-start-line="0" selection-start-column="904" selection-end-line="0" selection-end-column="904" />
-              <folding>
-                <marker date="1516893686489" expanded="true" signature="2092:2141" ph="..." />
-                <marker date="1516893686489" expanded="true" signature="2148:2199" ph="..." />
-                <marker date="1516893686489" expanded="true" signature="2206:2259" ph="..." />
-                <marker date="1516893686489" expanded="true" signature="2266:2321" ph="..." />
-                <marker date="1516893686489" expanded="true" signature="2329:2380" ph="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -185,8 +90,8 @@
       <list>
         <option value="Python Script" />
         <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -229,12 +134,12 @@
         <option value="$PROJECT_DIR$/control/static/control/js/test.js" />
         <option value="$PROJECT_DIR$/pidrone/settings.py" />
         <option value="$PROJECT_DIR$/control/static/control/css/base.css" />
-        <option value="$PROJECT_DIR$/control/static/control/js/joystick_handle.js" />
         <option value="$PROJECT_DIR$/control/templates/control/joystick.html" />
-        <option value="$PROJECT_DIR$/control/templates/control/base.html" />
-        <option value="$PROJECT_DIR$/control/templates/control/index.html" />
         <option value="$PROJECT_DIR$/control/static/control/js/joystick_view.js" />
         <option value="$PROJECT_DIR$/gitignore" />
+        <option value="$PROJECT_DIR$/control/templates/control/base.html" />
+        <option value="$PROJECT_DIR$/control/static/control/js/joystick_handle.js" />
+        <option value="$PROJECT_DIR$/control/templates/control/index.html" />
       </list>
     </option>
   </component>
@@ -272,6 +177,78 @@
             <path>
               <item name="drone-control" type="b2602c69:ProjectViewProjectNode" />
               <item name="drone-control" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="drone-control" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drone-control" type="462c0819:PsiDirectoryNode" />
+              <item name="control" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="drone-control" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drone-control" type="462c0819:PsiDirectoryNode" />
+              <item name="control" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="drone-control" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drone-control" type="462c0819:PsiDirectoryNode" />
+              <item name="control" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="control" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="drone-control" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drone-control" type="462c0819:PsiDirectoryNode" />
+              <item name="control" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="control" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="drone-control" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drone-control" type="462c0819:PsiDirectoryNode" />
+              <item name="control" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="control" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="drone-control" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drone-control" type="462c0819:PsiDirectoryNode" />
+              <item name="control" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="control" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="drone-control" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drone-control" type="462c0819:PsiDirectoryNode" />
+              <item name="control" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="control" type="462c0819:PsiDirectoryNode" />
+              <item name="yoannmoinet-nipplejs-2a1914e" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="drone-control" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drone-control" type="462c0819:PsiDirectoryNode" />
+              <item name="control" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="control" type="462c0819:PsiDirectoryNode" />
+              <item name="yoannmoinet-nipplejs-2a1914e" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="drone-control" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drone-control" type="462c0819:PsiDirectoryNode" />
+              <item name="control" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="drone-control" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drone-control" type="462c0819:PsiDirectoryNode" />
+              <item name="control" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="control" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -645,7 +622,21 @@
       <option name="project" value="LOCAL" />
       <updated>1516893877169</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added git ignore">
+      <created>1516893909593</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1516893909593</updated>
+    </task>
+    <task id="LOCAL-00010" summary="added git ignore">
+      <created>1516893954195</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1516893954195</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -661,6 +652,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28038898" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -672,7 +664,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -694,29 +685,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/control/templates/control/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control/static/control/css/base.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pidrone/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -882,6 +850,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -889,6 +858,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -911,13 +881,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="904" lean-forward="false" selection-start-line="0" selection-start-column="904" selection-end-line="0" selection-end-column="904" />
-          <folding>
-            <marker date="1516893686489" expanded="true" signature="2092:2141" ph="..." />
-            <marker date="1516893686489" expanded="true" signature="2148:2199" ph="..." />
-            <marker date="1516893686489" expanded="true" signature="2206:2259" ph="..." />
-            <marker date="1516893686489" expanded="true" signature="2266:2321" ph="..." />
-            <marker date="1516893686489" expanded="true" signature="2329:2380" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -934,20 +898,6 @@
         <state relative-caret-position="384">
           <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control/static/control/js/joystick_handle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="7" lean-forward="false" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-          <folding>
-            <marker date="1516893686489" expanded="true" signature="30:445" ph="{...}" />
-            <marker date="1516893686489" expanded="true" signature="101:261" ph="{...}" />
-            <marker date="1516893686489" expanded="true" signature="198:250" ph="{...}" />
-            <marker date="1516893686489" expanded="true" signature="315:350" ph="{...}" />
-            <marker date="1516893686489" expanded="true" signature="406:441" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -977,75 +927,66 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/control/templates/control/base.html">
+    <entry file="file://$PROJECT_DIR$/control/static/control/js/joystick_view.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="18" column="70" lean-forward="false" selection-start-line="18" selection-start-column="70" selection-end-line="18" selection-end-column="70" />
+          <caret line="18" column="25" lean-forward="false" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/static/control/js/joystick_handle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/static/control/yoannmoinet-nipplejs-2a1914e/.eslintrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/templates/control/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/static/control/yoannmoinet-nipplejs-2a1914e/test/.eslintrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/static/control/yoannmoinet-nipplejs-2a1914e/test/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3284">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/control/templates/control/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="9" lean-forward="false" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control/static/control/js/joystick_view.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="25" lean-forward="false" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
-          <folding>
-            <marker date="1516893803443" expanded="true" signature="131:235" ph="{...}" />
-            <marker date="1516893803443" expanded="true" signature="274:6594" ph="{...}" />
-            <marker date="1516893803443" expanded="true" signature="288:493" ph="{&quot;touchstart&quot;: &quot;startControl&quot;...}" />
-            <marker date="1516893803443" expanded="true" signature="553:1498" ph="{...}" />
-            <marker date="1516893803443" expanded="true" signature="1069:1130" ph="{...}" />
-            <marker date="1516893803443" expanded="true" signature="1226:1310" ph="{...}" />
-            <marker date="1516893803443" expanded="true" signature="1404:1490" ph="{...}" />
-            <marker date="1516893803443" expanded="true" signature="1545:1953" ph="{...}" />
-            <marker date="1516893803443" expanded="true" signature="1632:1910" ph="{...}" />
-            <marker date="1516893803443" expanded="true" signature="1757:1850" ph="{...}" />
-            <marker date="1516893803443" expanded="true" signature="1983:2132" ph="{...}" />
-            <marker date="1516893803443" expanded="true" signature="2041:2126" ph="{...}" />
-            <marker date="1516893803443" expanded="true" signature="2165:2201" ph="{...}" />
-            <marker date="1516893803443" expanded="true" signature="2232:2339" ph="{...}" />
-            <marker date="1516893803443" expanded="true" signature="2364:3173" ph="{...}" />
-            <marker date="1516893803443" expanded="true" signature="2400:2431" ph="{...}" />
-            <marker date="1516893803443" expanded="true" signature="2558:3022" ph="{...}" />
-            <marker date="1516893803443" expanded="true" signature="2711:2887" ph="{...}" />
-            <marker date="1516893803443" expanded="true" signature="3028:3097" ph="{...}" />
-            <marker date="1516893803443" expanded="true" signature="3205:3584" ph="{...}" />
-            <marker date="1516893803443" expanded="true" signature="3333:3388" ph="{...}" />
-            <marker date="1516893803443" expanded="true" signature="3425:3480" ph="{...}" />
-            <marker date="1516893803443" expanded="true" signature="3624:3959" ph="{...}" />
-            <marker date="1516893803443" expanded="true" signature="3735:3783" ph="{...}" />
-            <marker date="1516893803443" expanded="true" signature="3877:3924" ph="{...}" />
-            <marker date="1516893803443" expanded="true" signature="3993:4413" ph="{...}" />
-            <marker date="1516893803443" expanded="true" signature="4137:4195" ph="{...}" />
-            <marker date="1516893803443" expanded="true" signature="4220:4278" ph="{...}" />
-            <marker date="1516893803443" expanded="true" signature="4446:4792" ph="{...}" />
-            <marker date="1516893803443" expanded="true" signature="4530:4565" ph="{...}" />
-            <marker date="1516893803443" expanded="true" signature="4619:4746" ph="{...}" />
-            <marker date="1516893803443" expanded="true" signature="4698:4736" ph="{...}" />
-            <marker date="1516893803443" expanded="true" signature="4832:5023" ph="{...}" />
-            <marker date="1516893803443" expanded="true" signature="4965:5017" ph="{&quot;x&quot;: newX...}" />
-            <marker date="1516893803443" expanded="true" signature="5064:5213" ph="{...}" />
-            <marker date="1516893803443" expanded="true" signature="5085:5132" ph="{...}" />
-            <marker date="1516893803443" expanded="true" signature="5243:6278" ph="{...}" />
-            <marker date="1516893803443" expanded="true" signature="5574:5605" ph="{...}" />
-            <marker date="1516893803443" expanded="true" signature="6302:6592" ph="{...}" />
-            <marker date="1516893803443" expanded="true" signature="6329:6380" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state relative-caret-position="214">
+          <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
           <folding />
         </state>
       </provider>

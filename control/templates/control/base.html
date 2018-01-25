@@ -5,19 +5,18 @@
 <head>
     <meta charset="utf-8">
     <link rel='shortcut icon' type='image/x-icon' href='{% static "control/img/favicon.ico" %}'/>
+
     <title>{% block title %}PiDrone{% endblock %}</title>
+
     <link rel="stylesheet" type="text/css" href="{% static 'control/css/base.css' %}">
-    {#    <link rel="stylesheet" type="text/css" href="{% static 'css/jquery-ui.css' %}">#}
-    {#    <link rel="stylesheet" type="text/css" href="{% static 'css/jquery-ui.structure.css' %}">#}
     {% block stylesheet %}{% endblock %}
+
 </head>
 <body>
-{#<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>#}
-{#<script src="{% static 'js/jquery-ui.js' %}"></script>#}
-{#<script src="{% static 'js/underscore-min.js' %}"></script>#}
-{#<script src="{% static 'control/js/app.js' %}"></script>#}
+
 <script src="{% static 'control/js/jquery-1.11.2.min.js' %}"></script>
 {% block javascript %}{% endblock %}
+
 {% block content %}
 {% endblock %}
 
