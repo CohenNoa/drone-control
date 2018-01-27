@@ -2,7 +2,7 @@
     color: chartreuse;
     text-align: center;
     font-size: xx-large;
-    padding-top: 50%;
+    padding-top: 35%;
 }
 
 #right-joystick-section, #left-joystick-section {
@@ -13,4 +13,8 @@
 
 strong {
     color: black;
+}
+
+#btn-section{
+    text-align: center;
 }

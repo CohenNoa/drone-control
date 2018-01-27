@@ -4,14 +4,20 @@
 
 {% block stylesheet %}
     <link rel="stylesheet" type="text/css" href="{% static 'control/css/index.css' %}">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 {% endblock %}
-
 {% block javascript %}
     <script src="{% static 'control/yoannmoinet-nipplejs-2a1914e/dist/nipplejs.min.js' %}"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
 {% endblock %}
 
 
 {% block content %}
+    <div id="btn-section">
+        <button type="button" class="btn btn-success">Start</button>
+        <button type="button" class="btn btn-danger">Stop</button>
+    </div>
     <div id="jLeft" class="zone"></div>
     <div id="jRight" class="zone"></div>
 

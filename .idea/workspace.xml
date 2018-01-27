@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="8f2e16a9-54f4-428d-8df5-e2b3ad88c9cb" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/control/static/control/css/index.css" afterPath="$PROJECT_DIR$/control/static/control/css/index.css" />
+      <change beforePath="$PROJECT_DIR$/control/static/control/js/jquery-1.11.2.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/control/templates/control/base.html" afterPath="$PROJECT_DIR$/control/templates/control/base.html" />
+      <change beforePath="$PROJECT_DIR$/control/templates/control/index.html" afterPath="$PROJECT_DIR$/control/templates/control/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,9 +38,21 @@
       <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/control/templates/control/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="7" lean-forward="true" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
+            <state relative-caret-position="307">
+              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/control/static/control/MDB Free/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" column="43" lean-forward="false" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="43" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -45,7 +61,7 @@
         <entry file="file://$PROJECT_DIR$/control/templates/control/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
-              <caret line="17" column="6" lean-forward="true" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+              <caret line="17" column="38" lean-forward="false" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -64,8 +80,8 @@
       <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/control/static/control/css/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+            <state relative-caret-position="306">
+              <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -132,9 +148,9 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/control/static/control/MDB Free/index.html" />
         <option value="$PROJECT_DIR$/control/static/control/css/base.css" />
+        <option value="$PROJECT_DIR$/control/templates/control/base.html" />
         <option value="$PROJECT_DIR$/control/static/control/css/index.css" />
         <option value="$PROJECT_DIR$/control/templates/control/index.html" />
-        <option value="$PROJECT_DIR$/control/templates/control/base.html" />
       </list>
     </option>
   </component>
@@ -195,22 +211,6 @@
               <item name="drone-control" type="b2602c69:ProjectViewProjectNode" />
               <item name="drone-control" type="462c0819:PsiDirectoryNode" />
               <item name="control" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="control" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="drone-control" type="b2602c69:ProjectViewProjectNode" />
-              <item name="drone-control" type="462c0819:PsiDirectoryNode" />
-              <item name="control" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="control" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="drone-control" type="b2602c69:ProjectViewProjectNode" />
-              <item name="drone-control" type="462c0819:PsiDirectoryNode" />
-              <item name="control" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -229,7 +229,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="bas&#9;FILE&#9;file:///home/skillz/drone-control/control/templates/control/base.html&#10;base&#9;FILE&#9;file:///home/skillz/drone-control/control/static/control/css/base.css&#10;sett&#9;FILE&#9;file:///home/skillz/pidrone/pidrone/settings.py&#10;view&#9;FILE&#9;file:///home/skillz/pidrone/control/views.py&#10;ur&#9;FILE&#9;file:///home/skillz/pidrone/control/urls.py&#10;url&#9;FILE&#9;file:///home/skillz/pidrone/control/urls.py&#10;run&#9;FILE&#9;file:///home/skillz/pidrone/run_tornado.py&#10;settin&#9;FILE&#9;file:///home/skillz/pidrone/pidrone/settings.py&#10;ma&#9;FILE&#9;file:///home/skillz/pidrone/manage.py&#10;ru&#9;FILE&#9;file:///home/skillz/pidrone/run_tornado.py&#10;w&#9;FILE&#9;file:///home/skillz/pidrone/pidrone/wsgi.py&#10;se&#9;FILE&#9;file:///home/skillz/pidrone/pidrone/settings.py&#10;wsgi&#9;FILE&#9;file:///home/skillz/pidrone/pidrone/wsgi.py" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/skillz/drone-control/control/static/control/MDB Free/index.html&#10;bas&#9;FILE&#9;file:///home/skillz/drone-control/control/templates/control/base.html&#10;base&#9;FILE&#9;file:///home/skillz/drone-control/control/static/control/css/base.css&#10;sett&#9;FILE&#9;file:///home/skillz/pidrone/pidrone/settings.py&#10;view&#9;FILE&#9;file:///home/skillz/pidrone/control/views.py&#10;ur&#9;FILE&#9;file:///home/skillz/pidrone/control/urls.py&#10;url&#9;FILE&#9;file:///home/skillz/pidrone/control/urls.py&#10;run&#9;FILE&#9;file:///home/skillz/pidrone/run_tornado.py&#10;settin&#9;FILE&#9;file:///home/skillz/pidrone/pidrone/settings.py&#10;ma&#9;FILE&#9;file:///home/skillz/pidrone/manage.py&#10;ru&#9;FILE&#9;file:///home/skillz/pidrone/run_tornado.py&#10;w&#9;FILE&#9;file:///home/skillz/pidrone/pidrone/wsgi.py&#10;se&#9;FILE&#9;file:///home/skillz/pidrone/pidrone/settings.py&#10;wsgi&#9;FILE&#9;file:///home/skillz/pidrone/pidrone/wsgi.py" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
@@ -635,7 +635,14 @@
       <option name="project" value="LOCAL" />
       <updated>1517062070681</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="added font awesome">
+      <created>1517062074773</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1517062074773</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -874,22 +881,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/control/static/control/MDB Free/js/mdb.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/control/static/control/MDB Free/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="36" column="26" lean-forward="true" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/control/static/control/MDB Free/css/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -906,10 +897,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/control/static/control/css/index.css">
+    <entry file="file://$PROJECT_DIR$/control/static/control/MDB Free/js/mdb.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -922,18 +913,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/control/static/control/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/static/control/MDB Free/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="43" lean-forward="false" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="43" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/control/templates/control/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="17" column="6" lean-forward="true" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+          <caret line="17" column="38" lean-forward="false" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/control/templates/control/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="7" lean-forward="true" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
+        <state relative-caret-position="307">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>
