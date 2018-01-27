@@ -1,12 +1,13 @@
 {% extends 'control/base.html' %}
 {% load static %}
 
-{% block javascript %}
-    <script src="{% static 'control/yoannmoinet-nipplejs-2a1914e/dist/nipplejs.min.js' %}"></script>
-{% endblock %}
 
 {% block stylesheet %}
     <link rel="stylesheet" type="text/css" href="{% static 'control/css/index.css' %}">
+{% endblock %}
+
+{% block javascript %}
+    <script src="{% static 'control/yoannmoinet-nipplejs-2a1914e/dist/nipplejs.min.js' %}"></script>
 {% endblock %}
 
 
@@ -14,7 +15,7 @@
     <div id="jLeft" class="zone"></div>
     <div id="jRight" class="zone"></div>
 
-    <div class="debug"><strong>Debug <i class="fa fa-bug" aria-hidden="true"></i></strong></div>
+    <div class="debug">Debug <i class="fa fa-bug" aria-hidden="true"></i></div>
 
     <section id="left-joystick-section">
         <strong>dx: </strong>
