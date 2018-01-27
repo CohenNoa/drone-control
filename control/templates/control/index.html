@@ -1,13 +1,14 @@
 {% extends 'control/base.html' %}
 {% load static %}
 
+{% block javascript %}
+    <script src="{% static 'control/yoannmoinet-nipplejs-2a1914e/dist/nipplejs.min.js' %}"></script>
+{% endblock %}
+
 {% block stylesheet %}
     <link rel="stylesheet" type="text/css" href="{% static 'control/css/index.css' %}">
 {% endblock %}
 
-{% block javascript %}
-    <script src="{% static 'control/yoannmoinet-nipplejs-2a1914e/dist/nipplejs.min.js' %}"></script>
-{% endblock %}
 
 {% block content %}
     <div id="jLeft" class="zone"></div>

@@ -8,6 +8,9 @@
 
     <title>{% block title %}PiDrone{% endblock %}</title>
 
+    <script src="{% static 'control/js/jquery-1.11.2.min.js' %}"></script>
+    {% block javascript %}{% endblock %}
+
     <link rel="stylesheet" type="text/css" href="{% static 'control/css/base.css' %}">
 
     {#  font-awesome  #}
@@ -18,8 +21,6 @@
 </head>
 <body>
 
-<script src="{% static 'control/js/jquery-1.11.2.min.js' %}"></script>
-{% block javascript %}{% endblock %}
 
 {% block content %}
 {% endblock %}
