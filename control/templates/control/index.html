@@ -2,32 +2,141 @@
 {% load static %}
 
 {% block javascript %}
-
     <script src="{% static 'control/yoannmoinet-nipplejs-2a1914e/dist/nipplejs.min.js' %}"></script>
-
 {% endblock %}
 
 {% block content %}
-
     <div id="jLeft" class="zone"></div>
     <div id="jRight" class="zone"></div>
+
+    <div class="debug"><strong>Debug</strong></div>
+
+    <section id="left-joystick-section">
+        <strong>dx: </strong>
+        <div id="dx-lj"></div>
+
+        <strong>dy: </strong>
+        <div id="dy-lj"></div>
+
+        <strong>force: </strong>
+        <div id="force-lj"></div>
+
+        <strong>distance: </strong>
+        <div id="distance-lj"></div>
+
+        <strong>angle(degree): </strong>
+        <div id="angle-lj"></div>
+
+        <strong>x direction: </strong>
+        <div id="x-direction-lj"></div>
+
+        <strong>y direction: </strong>
+        <div id="y-direction-lj"></div>
+    </section>
+
+    <section id="right-joystick-section">
+        <strong>dx: </strong>
+        <div id="dx-rj"></div>
+
+        <strong>dy: </strong>
+        <div id="dy-rj"></div>
+
+        <strong>force: </strong>
+        <div id="force-rj"></div>
+
+        <strong>distance: </strong>
+        <div id="distance-rj"></div>
+
+        <strong>angle(degree): </strong>
+        <div id="angle-rj"></div>
+
+        <strong>x direction: </strong>
+        <div id="x-direction-rj"></div>
+
+        <strong>y direction: </strong>
+        <div id="y-direction-rj"></div>
+
+    </section>
 
     <script>
 
         var joystickLeft = nipplejs.create({
             zone: document.getElementById("jLeft"),
             mode: "static",
-            size: 180,
-            position: {left: '30%', top: '50%'},
+            size: 150,
+            position: {left: '30%', top: '60%'},
             color: "red"
-        });
+        }); // id = 0
 
         var joystickRight = nipplejs.create({
             zone: document.getElementById("jRight"),
             mode: "static",
-            size: 180,
-            position: {left: '70%', top: '50%'},
-            color: "green"
+            size: 150,
+            position: {left: '70%', top: '60%'},
+            color: "blue"
+        }); // id = 1
+
+
+        joystickLeft.on('end move', function (event, data) {
+            {# events types are end and move #}
+
+            {#console.log(event);#}
+            {#console.log(data);#}
+
+            if (event.type === "move") {
+
+                $('#dx-lj').html(parseInt(data.position.x));
+                $('#dy-lj').html(parseInt(data.position.y));
+                $('#force-lj').html(parseInt(data.force));
+                $('#distance-lj').html(parseInt(data.distance));
+                $('#angle-lj').html(parseInt(data.angle.degree));
+
+                try {
+                    $('#x-direction-lj').html(data.direction.x);
+                }
+                catch (err) {
+                    $('#x-direction-lj').html();
+
+                }
+
+                try {
+                    $('#y-direction-lj').html(data.direction.y);
+                }
+                catch (err) {
+                    $('#y-direction-lj').html();
+                }
+            }
+        });
+
+        joystickRight.on('end move', function (event, data) {
+            {# events types are end and move #}
+
+            {#console.log(event);#}
+            {#console.log(data);#}
+
+            if (event.type === "move") {
+
+                $('#dx-rj').html(parseInt(data.position.x));
+                $('#dy-rj').html(parseInt(data.position.y));
+                $('#force-rj').html(parseInt(data.force));
+                $('#distance-rj').html(parseInt(data.distance));
+                $('#angle-rj').html(parseInt(data.angle.degree));
+
+                try {
+                    $('#x-direction-rj').html(data.direction.x);
+                }
+                catch (err) {
+                    $('#x-direction-rj').html();
+
+                }
+
+                try {
+                    $('#y-direction-rj').html(data.direction.y);
+                }
+                catch (err) {
+                    $('#y-direction-rj').html();
+                }
+            }
         });
 
     </script>

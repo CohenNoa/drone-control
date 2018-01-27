@@ -1,3 +1,27 @@
 body {
     background-color: #434343;
 }
+
+div {
+    color: whitesmoke;
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.debug {
+    color: chartreuse;
+    text-align: center;
+    font-size: xx-large;
+    padding-top: 50%;
+}
+
+
+#right-joystick-section {
+    float:left;
+    padding-left: 25%;
+
+}
+#left-joystick-section{
+    float:left;
+    padding-left:25%;
+}
