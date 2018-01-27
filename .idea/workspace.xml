@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f2e16a9-54f4-428d-8df5-e2b3ad88c9cb" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/pidrone.iml" afterPath="$PROJECT_DIR$/.idea/pidrone.iml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/control/static/control/css/index.css" afterPath="$PROJECT_DIR$/control/static/control/css/index.css" />
-      <change beforePath="$PROJECT_DIR$/control/templates/control/base.html" afterPath="$PROJECT_DIR$/control/templates/control/base.html" />
-      <change beforePath="$PROJECT_DIR$/control/templates/control/index.html" afterPath="$PROJECT_DIR$/control/templates/control/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -632,7 +628,14 @@
       <option name="project" value="LOCAL" />
       <updated>1517060177958</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="added font awesome">
+      <created>1517062070681</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1517062070681</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
