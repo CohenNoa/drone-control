@@ -1,7 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 <head>
     <meta charset="utf-8">
     <link rel='shortcut icon' type='image/x-icon' href='{% static "control/img/favicon.ico" %}'/>
@@ -9,6 +9,9 @@
     <title>{% block title %}PiDrone{% endblock %}</title>
 
     <link rel="stylesheet" type="text/css" href="{% static 'control/css/base.css' %}">
+
+    {#  font-awesome  #}
+    <link rel="stylesheet" href="{% static 'control/fontawesome-free-5.0.6/on-server/css/fontawesome-all.min.css' %}">
 
     {% block stylesheet %}{% endblock %}
 
