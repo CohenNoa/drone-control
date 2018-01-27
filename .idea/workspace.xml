@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8f2e16a9-54f4-428d-8df5-e2b3ad88c9cb" name="Default" comment="added debug sect">
+    <list default="true" id="8f2e16a9-54f4-428d-8df5-e2b3ad88c9cb" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/control/static/control/css/index.css" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/control/static/control/css/base.css" afterPath="$PROJECT_DIR$/control/static/control/css/base.css" />
+      <change beforePath="$PROJECT_DIR$/control/templates/control/base.html" afterPath="$PROJECT_DIR$/control/templates/control/base.html" />
       <change beforePath="$PROJECT_DIR$/control/templates/control/index.html" afterPath="$PROJECT_DIR$/control/templates/control/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,18 +38,8 @@
       <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/control/templates/control/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="14" lean-forward="true" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/control/static/control/yoannmoinet-nipplejs-2a1914e/test/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="622">
-              <caret line="169" column="18" lean-forward="true" selection-start-line="140" selection-start-column="12" selection-end-line="169" selection-end-column="18" />
+            <state relative-caret-position="187">
+              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -56,18 +48,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/control/templates/control/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/control/static/control/css/base.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="21" lean-forward="false" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+            <state relative-caret-position="187">
+              <caret line="11" column="19" lean-forward="false" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -79,9 +61,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
-        <option value="CSS File" />
         <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -98,6 +80,7 @@
       <find>static</find>
       <find>createN</find>
       <find>right</find>
+      <find>start</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -129,8 +112,10 @@
         <option value="$PROJECT_DIR$/control/static/control/js/joystick_view.js" />
         <option value="$PROJECT_DIR$/gitignore" />
         <option value="$PROJECT_DIR$/control/static/control/js/joystick_handle.js" />
-        <option value="$PROJECT_DIR$/control/templates/control/base.html" />
         <option value="$PROJECT_DIR$/control/static/control/css/base.css" />
+        <option value="$PROJECT_DIR$/control/static/control/css/index.css" />
+        <option value="$PROJECT_DIR$/control/static/control/css/bootstrap.min.css" />
+        <option value="$PROJECT_DIR$/control/templates/control/base.html" />
         <option value="$PROJECT_DIR$/control/templates/control/index.html" />
       </list>
     </option>
@@ -194,6 +179,14 @@
               <item name="control" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="control" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="drone-control" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drone-control" type="462c0819:PsiDirectoryNode" />
+              <item name="control" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="control" type="462c0819:PsiDirectoryNode" />
               <item name="yoannmoinet-nipplejs-2a1914e" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -227,7 +220,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/skillz/drone-control/control/static/control/css/base.css&#10;base&#9;FILE&#9;file:///home/skillz/drone-control/control/static/control/css/base.css&#10;sett&#9;FILE&#9;file:///home/skillz/pidrone/pidrone/settings.py&#10;view&#9;FILE&#9;file:///home/skillz/pidrone/control/views.py&#10;ur&#9;FILE&#9;file:///home/skillz/pidrone/control/urls.py&#10;url&#9;FILE&#9;file:///home/skillz/pidrone/control/urls.py&#10;run&#9;FILE&#9;file:///home/skillz/pidrone/run_tornado.py&#10;settin&#9;FILE&#9;file:///home/skillz/pidrone/pidrone/settings.py&#10;ma&#9;FILE&#9;file:///home/skillz/pidrone/manage.py&#10;ru&#9;FILE&#9;file:///home/skillz/pidrone/run_tornado.py&#10;w&#9;FILE&#9;file:///home/skillz/pidrone/pidrone/wsgi.py&#10;se&#9;FILE&#9;file:///home/skillz/pidrone/pidrone/settings.py&#10;wsgi&#9;FILE&#9;file:///home/skillz/pidrone/pidrone/wsgi.py" />
+    <property name="SearchEverywhereHistoryKey" value="bas&#9;FILE&#9;file:///home/skillz/drone-control/control/templates/control/base.html&#10;base&#9;FILE&#9;file:///home/skillz/drone-control/control/static/control/css/base.css&#10;sett&#9;FILE&#9;file:///home/skillz/pidrone/pidrone/settings.py&#10;view&#9;FILE&#9;file:///home/skillz/pidrone/control/views.py&#10;ur&#9;FILE&#9;file:///home/skillz/pidrone/control/urls.py&#10;url&#9;FILE&#9;file:///home/skillz/pidrone/control/urls.py&#10;run&#9;FILE&#9;file:///home/skillz/pidrone/run_tornado.py&#10;settin&#9;FILE&#9;file:///home/skillz/pidrone/pidrone/settings.py&#10;ma&#9;FILE&#9;file:///home/skillz/pidrone/manage.py&#10;ru&#9;FILE&#9;file:///home/skillz/pidrone/run_tornado.py&#10;w&#9;FILE&#9;file:///home/skillz/pidrone/pidrone/wsgi.py&#10;se&#9;FILE&#9;file:///home/skillz/pidrone/pidrone/settings.py&#10;wsgi&#9;FILE&#9;file:///home/skillz/pidrone/pidrone/wsgi.py" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
@@ -604,7 +597,14 @@
       <option name="project" value="LOCAL" />
       <updated>1516893954195</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="joysticks are working + debug section">
+      <created>1517048503516</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1517048503516</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -658,7 +658,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="added git ignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="added git ignore" />
+    <MESSAGE value="joysticks are working + debug section" />
+    <option name="LAST_COMMIT_MESSAGE" value="joysticks are working + debug section" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -667,20 +668,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pidrone/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="58" lean-forward="false" selection-start-line="18" selection-start-column="58" selection-end-line="18" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pidrone/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/control/apps.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -882,32 +869,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/control/static/control/yoannmoinet-nipplejs-2a1914e/test/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="622">
-          <caret line="169" column="18" lean-forward="true" selection-start-line="140" selection-start-column="12" selection-end-line="169" selection-end-column="18" />
+        <state relative-caret-position="197">
+          <caret line="144" column="28" lean-forward="true" selection-start-line="144" selection-start-column="28" selection-end-line="144" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/control/templates/control/base.html">
+    <entry file="file://$PROJECT_DIR$/control/static/control/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="14" lean-forward="true" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+        <state relative-caret-position="187">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/control/static/control/css/base.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="21" lean-forward="false" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+        <state relative-caret-position="34">
+          <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/static/control/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="109353" lean-forward="false" selection-start-line="4" selection-start-column="109353" selection-end-line="4" selection-end-column="109353" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/control/templates/control/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/control/templates/control/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+        <state relative-caret-position="187">
+          <caret line="11" column="19" lean-forward="false" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
           <folding />
         </state>
       </provider>
