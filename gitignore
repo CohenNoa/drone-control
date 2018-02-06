@@ -102,5 +102,6 @@ ENV/
 .mypy_cache/
 
 .idea/
+.idea
 log.log
 db.sqlite3
