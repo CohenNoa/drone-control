@@ -21,133 +21,83 @@
 
     <div class="debug">Debug <i class="fa fa-bug" aria-hidden="true"></i></div>
 
-    <section id="left-joystick-section">
-        <strong>dx: </strong>
-        <div id="dx-lj"></div>
+    <table class="joystick-table">
+        <tr>
+            <td>
+                <section id="left-joystick-section">
+                    <strong>dx: </strong>
+                    <div id="dx-lj"></div>
 
-        <strong>dy: </strong>
-        <div id="dy-lj"></div>
+                    <strong>dy: </strong>
+                    <div id="dy-lj"></div>
+                </section>
+            </td>
+            <td>
+                <section id="right-joystick-section">
+                    <strong>dx: </strong>
+                    <div id="dx-rj"></div>
 
-        <strong>force: </strong>
-        <div id="force-lj"></div>
-
-        <strong>distance: </strong>
-        <div id="distance-lj"></div>
-
-        <strong>angle(degree): </strong>
-        <div id="angle-lj"></div>
-
-        <strong>x direction: </strong>
-        <div id="x-direction-lj"></div>
-
-        <strong>y direction: </strong>
-        <div id="y-direction-lj"></div>
-    </section>
-
-    <section id="right-joystick-section">
-        <strong>dx: </strong>
-        <div id="dx-rj"></div>
-
-        <strong>dy: </strong>
-        <div id="dy-rj"></div>
-
-        <strong>force: </strong>
-        <div id="force-rj"></div>
-
-        <strong>distance: </strong>
-        <div id="distance-rj"></div>
-
-        <strong>angle(degree): </strong>
-        <div id="angle-rj"></div>
-
-        <strong>x direction: </strong>
-        <div id="x-direction-rj"></div>
-
-        <strong>y direction: </strong>
-        <div id="y-direction-rj"></div>
-
-    </section>
-
+                    <strong>dy: </strong>
+                    <div id="dy-rj"></div>
+                </section>
+            </td>
+        </tr>
+    </table>
     <script>
 
+        var width = window.innerWidth;
+        var R = parseInt(width) / 4;
         var joystickLeft = nipplejs.create({
             zone: document.getElementById("jLeft"),
             mode: "static",
-            size: 150,
-            position: {left: '30%', top: '60%'},
+            size: R,
+            position: {left: '20%', top: '60%'},
             color: "red"
         }); // id = 0
 
         var joystickRight = nipplejs.create({
             zone: document.getElementById("jRight"),
             mode: "static",
-            size: 150,
-            position: {left: '70%', top: '60%'},
+            size: R,
+            position: {left: '80%', top: '60%'},
             color: "blue"
         }); // id = 1
 
+        {# events types are end and move #}
 
-        joystickLeft.on('end move', function (event, data) {
-            {# events types are end and move #}
-
-            {#console.log(event);#}
-            {#console.log(data);#}
-
-            if (event.type === "move") {
-
-                $('#dx-lj').html(parseInt(data.position.x));
-                $('#dy-lj').html(parseInt(data.position.y));
-                $('#force-lj').html(parseInt(data.force));
-                $('#distance-lj').html(parseInt(data.distance));
-                $('#angle-lj').html(parseInt(data.angle.degree));
-
-                try {
-                    $('#x-direction-lj').html(data.direction.x);
-                }
-                catch (err) {
-                    $('#x-direction-lj').html();
-
-                }
-
-                try {
-                    $('#y-direction-lj').html(data.direction.y);
-                }
-                catch (err) {
-                    $('#y-direction-lj').html();
-                }
-            }
-        });
-
-        joystickRight.on('end move', function (event, data) {
-            {# events types are end and move #}
+        joystickLeft.on('move', function (event, data) {
 
             {#console.log(event);#}
             {#console.log(data);#}
 
-            if (event.type === "move") {
+            $('#dx-lj').html(parseInt(Math.cos((Math.PI * data.angle.degree) / 180) * 100));
+            $('#dy-lj').html(parseInt(Math.sin((Math.PI * data.angle.degree) / 180) * 100));
 
-                $('#dx-rj').html(parseInt(data.position.x));
-                $('#dy-rj').html(parseInt(data.position.y));
-                $('#force-rj').html(parseInt(data.force));
-                $('#distance-rj').html(parseInt(data.distance));
-                $('#angle-rj').html(parseInt(data.angle.degree));
-
-                try {
-                    $('#x-direction-rj').html(data.direction.x);
-                }
-                catch (err) {
-                    $('#x-direction-rj').html();
-
-                }
-
-                try {
-                    $('#y-direction-rj').html(data.direction.y);
-                }
-                catch (err) {
-                    $('#y-direction-rj').html();
-                }
-            }
         });
+
+        joystickLeft.on('end', function () {
+            $('#dx-lj').html(0);
+            $('#dy-lj').html(0);
+
+        });
+
+
+        joystickRight.on('move', function (event, data) {
+
+            {#console.log(event);#}
+            {#console.log(data);#}
+
+            $('#dx-rj').html(parseInt(Math.cos((Math.PI * data.angle.degree) / 180) * 100));
+            $('#dy-rj').html(parseInt(Math.sin((Math.PI * data.angle.degree) / 180) * 100));
+
+        });
+
+        joystickRight.on('end', function () {
+            $('#dx-rj').html(0);
+            $('#dy-rj').html(0);
+
+        });
+
     </script>
 
 {% endblock %}

@@ -2,12 +2,14 @@
     color: chartreuse;
     text-align: center;
     font-size: xx-large;
-    padding-top: 35%;
+    padding-top: 45%;
 }
 
-#right-joystick-section, #left-joystick-section {
-    float: left;
-    padding-left: 25%;
+.joystick-table {
+    text-align: center;
+    width:100%;
+    margin-bottom: 5%;
+
 
 }
 
