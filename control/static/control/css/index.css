@@ -5,16 +5,24 @@
     padding-top: 55%;
 }
 
-.joystick-table {
-    text-align: center;
-    width:100%;
-    margin-bottom: 5%;
+#left-joystick {
+    float: left;
+    padding-left: 10%;
+}
+
+#right-joystick {
+    float: left;
+    padding-left: 55%;
+}
+
+h1{
+    color: black;
 }
 
 strong {
     color: black;
 }
 
-#btn-section{
+#btn-section {
     text-align: center;
 }
