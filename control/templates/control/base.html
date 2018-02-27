@@ -30,11 +30,24 @@
     <!-- MDB core JavaScript -->
     {#    <script type="text/javascript" src="{% static 'control/MDB Free/js/mdb.min.js' %}"></script>#}
 
+    <script type="text/javascript" src="{% static 'control/js/navbar.js' %}"></script>
+
     {% block javascript %}{% endblock %}
 
 </head>
 <body>
 
+
+{% block navbar %}
+    <div class="dropdown">
+        <button onclick="show()" class="dropbtn">Menu</button>
+        <div id="dropdown" class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+    </div>
+{% endblock %}
 
 {% block content %}
 {% endblock %}

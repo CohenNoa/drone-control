@@ -15,7 +15,7 @@
     padding-left: 55%;
 }
 
-h1{
+h1 {
     color: black;
 }
 
@@ -25,4 +25,5 @@ strong {
 
 #btn-section {
     text-align: center;
+    margin-top: -3.5em; /* to place the buttons in the top of the page */
 }

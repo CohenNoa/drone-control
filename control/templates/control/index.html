@@ -42,60 +42,60 @@
     </section>
 
     <script>
-    {#  responsive size of joystick  #}
-    var width = window.innerWidth;
-    var R = parseInt(width) / 4;
+        {#  responsive size of joystick  #}
+        var width = window.innerWidth;
+        var R = parseInt(width) / 4;
 
-    var joystickLeft = nipplejs.create({
-    zone: document.getElementById("jLeft"),
-    mode: "static",
-    size: R,
-    position: {left: '20%', top: '60%'},
-    color: "red"
-    }); // id = 0
+        var joystickLeft = nipplejs.create({
+            zone: document.getElementById("jLeft"),
+            mode: "static",
+            size: R,
+            position: {left: '20%', top: '60%'},
+            color: "red"
+        }); // id = 0
 
-    var joystickRight = nipplejs.create({
-    zone: document.getElementById("jRight"),
-    mode: "static",
-    size: R,
-    position: {left: '80%', top: '60%'},
-    color: "blue"
-    }); // id = 1
+        var joystickRight = nipplejs.create({
+            zone: document.getElementById("jRight"),
+            mode: "static",
+            size: R,
+            position: {left: '80%', top: '60%'},
+            color: "blue"
+        }); // id = 1
 
-    {# events types are end and move #}
-    {#  values are between +-100  #}
-    joystickLeft.on('move', function (event, data) {
+        {# events types are end and move #}
+        {#  values are between +-100  #}
+        joystickLeft.on('move', function (event, data) {
 
-    {#console.log(event);#}
-    {#console.log(data);#}
+            {#console.log(event);#}
+            {#console.log(data);#}
 
-    $('#dx-lj').html(parseInt(Math.cos((Math.PI * data.angle.degree) / 180) * 101));
-    $('#dy-lj').html(parseInt(Math.sin((Math.PI * data.angle.degree) / 180) * 101));
+            $('#dx-lj').html(parseInt(Math.cos((Math.PI * data.angle.degree) / 180) * 101));
+            $('#dy-lj').html(parseInt(Math.sin((Math.PI * data.angle.degree) / 180) * 101));
 
-    });
+        });
 
-    joystickLeft.on('end', function () {
-    $('#dx-lj').html(0);
-    $('#dy-lj').html(0);
+        joystickLeft.on('end', function () {
+            $('#dx-lj').html(0);
+            $('#dy-lj').html(0);
 
-    });
+        });
 
 
-    joystickRight.on('move', function (event, data) {
+        joystickRight.on('move', function (event, data) {
 
-    {#console.log(event);#}
-    {#console.log(data);#}
+            {#console.log(event);#}
+            {#console.log(data);#}
 
-    $('#dx-rj').html(parseInt(Math.cos((Math.PI * data.angle.degree) / 180) * 101));
-    $('#dy-rj').html(parseInt(Math.sin((Math.PI * data.angle.degree) / 180) * 101));
+            $('#dx-rj').html(parseInt(Math.cos((Math.PI * data.angle.degree) / 180) * 101));
+            $('#dy-rj').html(parseInt(Math.sin((Math.PI * data.angle.degree) / 180) * 101));
 
-    });
+        });
 
-    joystickRight.on('end', function () {
-    $('#dx-rj').html(0);
-    $('#dy-rj').html(0);
+        joystickRight.on('end', function () {
+            $('#dx-rj').html(0);
+            $('#dy-rj').html(0);
 
-    });
+        });
 
     </script>
 
