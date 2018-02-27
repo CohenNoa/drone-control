@@ -16,6 +16,8 @@
         <button type="button" class="btn btn-success">Start</button>
         <button type="button" class="btn btn-danger">Stop</button>
     </div>
+
+    {#  handle the joysticks  #}
     <div id="jLeft" class="zone"></div>
     <div id="jRight" class="zone"></div>
 
@@ -40,6 +42,7 @@
     </section>
 
     <script>
+    {#  responsive size of joystick  #}
     var width = window.innerWidth;
     var R = parseInt(width) / 4;
 
@@ -60,7 +63,7 @@
     }); // id = 1
 
     {# events types are end and move #}
-
+    {#  values are between +-100  #}
     joystickLeft.on('move', function (event, data) {
 
     {#console.log(event);#}
