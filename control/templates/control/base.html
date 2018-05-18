@@ -8,46 +8,25 @@
     <link rel='shortcut icon' type='image/x-icon' href='{% static "control/img/favicon.ico" %}'/>
 
     <title>{% block title %}PiDrone{% endblock %}</title>
-
-
-    <!-- font-awesome -->
-    <link rel="stylesheet" href="{% static 'control/fontawesome/on-server/css/fontawesome-all.min.css' %}">
+    
     <!-- Bootstrap core CSS -->
-    <link href="{% static 'control/MDB/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'control/MDB/css/bootstrap.min.css' %}">
+    
     <!-- Material Design Bootstrap -->
-    <link href="{% static 'control/MDB/css/mdb.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'control/MDB/css/mdb.min.css' %}">
+    
     <link rel="stylesheet" type="text/css" href="{% static 'control/css/base.css' %}">
-
+	
 
     {% block stylesheet %}{% endblock %}
 
     <!-- JQuery -->
     <script type="text/javascript" src="{% static 'control/MDB/js/jquery-3.2.1.min.js' %}"></script>
-    <!-- Bootstrap tooltips -->
-    {#    <script type="text/javascript" src="{% static 'control/MDB Free/js/popper.min.js' %}"></script>#}
-    <!-- Bootstrap core JavaScript -->
-    {#    <script type="text/javascript" src="{% static 'control/MDB Free/js/bootstrap.min.js' %}"></script>#}
-    <!-- MDB core JavaScript -->
-    {#    <script type="text/javascript" src="{% static 'control/MDB Free/js/mdb.min.js' %}"></script>#}
-
-    <script type="text/javascript" src="{% static 'control/js/navbar.js' %}"></script>
-
     {% block javascript %}{% endblock %}
 
 </head>
 <body>
 
-
-{% block navbar %}
-    <div class="dropdown">
-        <button onclick="show()" class="dropbtn">Menu</button>
-        <div id="dropdown" class="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-        </div>
-    </div>
-{% endblock %}
 
 {% block content %}
 {% endblock %}

@@ -1,10 +1,3 @@
-.debug {
-    color: chartreuse;
-    text-align: center;
-    font-size: xx-large;
-    padding-top: 55%;
-}
-
 #left-joystick {
     float: left;
     padding-left: 10%;
@@ -25,5 +18,17 @@ strong {
 
 #btn-section {
     text-align: center;
-    margin-top: -3.5em; /* to place the buttons in the top of the page */
+    margin-top: 1em; /* to place the buttons in the top of the page */
+}
+
+#data-section {
+    margin-top: 55em;
+}
+
+#left {
+    color: red;
+}
+
+#right {
+    color: blue;
 }
