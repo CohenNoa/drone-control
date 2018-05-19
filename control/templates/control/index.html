@@ -12,7 +12,7 @@
 
 
 {% block content %}
-	
+
     <div id="btn-section">
         <button type="button" class="btn btn-success" id="start">Start</button>
         <button type="button" class="btn btn-danger" id="stop">Stop</button>
@@ -22,65 +22,66 @@
     <div id="jLeft" class="zone"></div>
     <div id="jRight" class="zone"></div>
     <section id="data-section">
-    <section id="left-joystick">
-        <h1 id="left">Left</h1>
-        <strong>dx: </strong>
-        <div id="dx-lj"></div>
+        <section id="left-joystick">
+            <h1 id="left">Left</h1>
+            <strong>dx: </strong>
+            <div id="dx-lj"></div>
 
-        <strong>dy: </strong>
-        <div id="dy-lj"></div>
-    </section>
+            <strong>dy: </strong>
+            <div id="dy-lj"></div>
+        </section>
 
-    <section id="right-joystick">
-        <h1 id="right">Right</h1>
-        <strong>dx: </strong>
-        <div id="dx-rj"></div>
+        <section id="right-joystick">
+            <h1 id="right">Right</h1>
+            <strong>dx: </strong>
+            <div id="dx-rj"></div>
 
-        <strong>dy: </strong>
-        <div id="dy-rj"></div>
-    </section>
+            <strong>dy: </strong>
+            <div id="dy-rj"></div>
+        </section>
     </section>
     <script>
-	function sleep(milliseconds) {
-		let start = new Date().getTime();
-		for (let i = 0; i < 1e7; i++) {
-			if ((new Date().getTime() - start) > milliseconds) {
-				break;
-			}
-		}
-	}
+        function sleep(milliseconds) {
+            let start = new Date().getTime();
+            for (let i = 0; i < 1e7; i++) {
+                if ((new Date().getTime() - start) > milliseconds) {
+                    break;
+                }
+            }
+        }
 
-	function ajax_command(command) {
-		$.ajax({
-			type: "GET",
-			url: 'send_command/',
-			data: {
-				'command': command
-			},
-			dataType: 'json',
-			success: function (data) {
-				if (!data.success) {
-					alert("Error communication")
-				}
-			}
-		});
-		sleep(40); {# 40 milliseconds = 0.04 seconds #}
-		return false
-	}	
-	
-	$("#start").click(function () {
-		ajax_command("start");
-	});
-	
-	$("#stop").click(function () {
-		ajax_command("stop");
-	});	
+        function ajax_command(command) {
+            $.ajax({
+                type: "GET",
+                url: 'send_command/',
+                data: {
+                    'command': command
+                },
+                dataType: 'json',
+                success: function (data) {
+                    if (!data.success) {
+                        alert("Error communication")
+                    }
+                }
+            });
+            sleep(40);
+            {# 40 milliseconds = 0.04 seconds #}
+            return false
+        }
+
+        $("#start").click(function () {
+            ajax_command("start");
+        });
+
+        $("#stop").click(function () {
+            ajax_command("stop");
+        });
 
         {#  responsive size of joystick  #}
-        var width = window.innerWidth;
-        var R = parseInt(width) / 4;
+        let width = window.innerWidth;
+        let R = parseInt(width) / 4;
 
-        var joystickLeft = nipplejs.create({
+        let joystickLeft = nipplejs.create({
             zone: document.getElementById("jLeft"),
             mode: "static",
             size: R,
@@ -88,56 +89,59 @@
             color: "red"
         }); // id = 0
 
-        var joystickRight = nipplejs.create({
+        let joystickRight = nipplejs.create({
             zone: document.getElementById("jRight"),
             mode: "static",
             size: R,
             position: {left: '80%', top: '60%'},
             color: "blue"
         }); // id = 1
-	
-	let current_yaw, current_throttle, current_roll, current_pitch = 0;
-	
-	{# order: dx, dy #}
-	{# "attitude_right_roll,pitch" or "attitude_left_yaw,throttle"  #}
-	
-	function joystick_left_percentage() {
-		let yaw = ($('#dx-lj').text() / 2);
-		let throttle = ($('#dy-lj').text() / 2);
-		if (yaw === current_yaw) { yaw = -1; } else { current_yaw = yaw; }
-		if (throttle === current_throttle) { throttle = -1; } else { current_throttle = throttle; }
-		return "attitude_left_" + [yaw, throttle]
-	}
-	
-	function joystick_right_percentage() {
-		let roll = ($('#dx-rj').text() / 2);
-		let pitch = ($('#dy-rj').text() / 2);
-		if (roll === current_roll) { roll = -1; } else { current_roll = roll; }
-		if (pitch === current_pitch) { pitch = -1; } else { current_pitch = pitch; }
-		return "attitude_right_" + [roll, pitch]
-	}
 
-function joystick_yaw_percentage() {
-let yaw = ($('#dx-lj').text() / 2);
-if (yaw === current_yaw) { yaw = -1; } else { current_yaw = yaw; }
-return yaw;
-}
-function joystick_throttle_percentage() {
-let throttle = ($('#dy-lj').text() / 2);
-if (throttle === current_throttle) { throttle = -1; } else { current_throttle = throttle; }
-return throttle;
-}
-function joystick_roll_percentage() {
-let roll = ($('#dx-rj').text() / 2);
-if (roll === current_roll) { roll = -1; } else { current_roll = roll; }
-return roll;
-}
-function joystick_pitch_percentage() {
-let pitch = ($('#dy-rj').text() / 2);
-if (pitch === current_pitch) { pitch = -1; } else { current_pitch = pitch; }
-return pitch;
-}
-	
+        let current_yaw, current_throttle, current_roll, current_pitch = 0;
+
+        {# order: dx, dy #}
+        {# "attitude_right_roll,pitch" or "attitude_left_yaw,throttle"  #}
+
+        function joystick_yaw_percentage() {
+            let yaw = ($('#dx-lj').text() / 2);
+            if (yaw === current_yaw) {
+                yaw = -1;
+            } else {
+                current_yaw = yaw;
+            }
+            return yaw;
+        }
+
+        function joystick_throttle_percentage() {
+            let throttle = ($('#dy-lj').text() / 2);
+            if (throttle === current_throttle) {
+                throttle = -1;
+            } else {
+                current_throttle = throttle;
+            }
+            return throttle;
+        }
+
+        function joystick_roll_percentage() {
+            let roll = ($('#dx-rj').text() / 2);
+            if (roll === current_roll) {
+                roll = -1;
+            } else {
+                current_roll = roll;
+            }
+            return roll;
+        }
+
+        function joystick_pitch_percentage() {
+            let pitch = ($('#dy-rj').text() / 2);
+            if (pitch === current_pitch) {
+                pitch = -1;
+            } else {
+                current_pitch = pitch;
+            }
+            return pitch;
+        }
+
         {# events types are end and move #}
         {#  values are between 0-200  #}
         joystickLeft.on('move', function (event, data) {
@@ -147,23 +151,29 @@ return pitch;
 
             $('#dx-lj').html((parseInt(Math.cos((Math.PI * data.angle.degree) / 180) * 101)) + 100);
             $('#dy-lj').html((parseInt(Math.sin((Math.PI * data.angle.degree) / 180) * 101)) + 100);
-	    //ajax_command(joystick_left_percentage());
-let yaw = joystick_yaw_percentage()
-let throttle = joystick_throttle_percentage()
-if(yaw>=0) { ajax_command("attitude_yaw_" + yaw); }
-if(throttle>=0) { ajax_command("attitude_throttle_" + throttle); }
-	});
+            //ajax_command(joystick_left_percentage());
+            let yaw = joystick_yaw_percentage();
+            let throttle = joystick_throttle_percentage();
+            if (yaw >= 0) {
+                ajax_command("attitude_yaw_" + yaw);
+            }
+            if (throttle >= 0) {
+                ajax_command("attitude_throttle_" + throttle);
+            }
+        });
 
         joystickLeft.on('end', function () {
             $('#dx-lj').html(100);
             $('#dy-lj').html(0);
-let position = joystickLeft;
-console.log(position)
-	    //ajax_command(joystick_left_percentage());
-let yaw = joystick_yaw_percentage();
-let throttle = joystick_throttle_percentage();
-if(yaw>=0) { ajax_command("attitude_yaw_" + yaw); }
-if(throttle>=0) { ajax_command("attitude_throttle_" + throttle); }
+            //ajax_command(joystick_left_percentage());
+            let yaw = joystick_yaw_percentage();
+            let throttle = joystick_throttle_percentage();
+            if (yaw >= 0) {
+                ajax_command("attitude_yaw_" + yaw);
+            }
+            if (throttle >= 0) {
+                ajax_command("attitude_throttle_" + throttle);
+            }
         });
 
 
@@ -171,26 +181,34 @@ if(throttle>=0) { ajax_command("attitude_throttle_" + throttle); }
 
             {#console.log(event);#}
             {#console.log(data);#}
-	    
+
             $('#dx-rj').html((parseInt(Math.cos((Math.PI * data.angle.degree) / 180) * 101)) + 100);
             $('#dy-rj').html((parseInt(Math.sin((Math.PI * data.angle.degree) / 180) * 101)) + 100);
-	    //ajax_command(joystick_right_percentage());
-let roll = joystick_roll_percentage();
-let pitch = joystick_pitch_percentage();
-if(roll>=0) { ajax_command("attitude_roll_" + roll); }
-if(pitch>=0) { ajax_command("attitude_pitch_" + pitch); }
+            //ajax_command(joystick_right_percentage());
+            let roll = joystick_roll_percentage();
+            let pitch = joystick_pitch_percentage();
+            if (roll >= 0) {
+                ajax_command("attitude_roll_" + roll);
+            }
+            if (pitch >= 0) {
+                ajax_command("attitude_pitch_" + pitch);
+            }
         });
 
         joystickRight.on('end', function () {
             $('#dx-rj').html(100);
             $('#dy-rj').html(100);
-	    //ajax_command(joystick_right_percentage());
-let roll = joystick_roll_percentage();
-let pitch = joystick_pitch_percentage();
-if(roll>=0) { ajax_command("attitude_roll_" + roll); }
-if(pitch>=0) { ajax_command("attitude_pitch_" + pitch); }
+            //ajax_command(joystick_right_percentage());
+            let roll = joystick_roll_percentage();
+            let pitch = joystick_pitch_percentage();
+            if (roll >= 0) {
+                ajax_command("attitude_roll_" + roll);
+            }
+            if (pitch >= 0) {
+                ajax_command("attitude_pitch_" + pitch);
+            }
         });
-	
+
     </script>
 
 {% endblock %}
