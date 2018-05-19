@@ -5,7 +5,7 @@ try:
     import RPi.GPIO as GPIO
 except RuntimeError:
     running_on_computer = True
-    print("GPIO module can only be run on a Raspberry Pi")
+    print("GPIO module can only be run on a Raspberry Pi!")
 
 timeout = 3  # seconds
 frequency = 50  # Hz
@@ -42,7 +42,8 @@ class AttitudeHandler(object):
 
         print("Setup complete")
 
-    def get_duty_cycle(self, percentage):
+    @staticmethod
+    def get_duty_cycle(percentage):
         return (percentage / 20) + 5
 
     def default_position(self):

@@ -13,6 +13,13 @@
 
 {% block content %}
 
+    <!-- The Modal -->
+    <div id="waitModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+        </div>
+    </div>
+
     <div id="btn-section">
         <button type="button" class="btn btn-success" id="start">Start</button>
         <button type="button" class="btn btn-danger" id="stop">Stop</button>
@@ -41,6 +48,7 @@
         </section>
     </section>
     <script>
+
         function sleep(milliseconds) {
             let start = new Date().getTime();
             for (let i = 0; i < 1e7; i++) {
@@ -64,17 +72,40 @@
                     }
                 }
             });
-            sleep(40);
-            {# 40 milliseconds = 0.04 seconds #}
+            sleep(30);
+            {# 30 milliseconds = 0.03 seconds #}
             return false
         }
 
+        let initialized_drone = false;
+
         $("#start").click(function () {
             ajax_command("start");
+            if (!initialized_drone) {
+                let modal = document.getElementById('waitModal');
+                modal.children[0].innerHTML = "Arm: wait 3 seconds...";
+                modal.style.display = "block";
+
+                setTimeout(function () {
+                    modal.style.display = "none";
+                }, 3000);
+
+            }
+            initialized_drone = true;
         });
 
         $("#stop").click(function () {
             ajax_command("stop");
+            if (initialized_drone) {
+                let modal = document.getElementById('waitModal');
+                modal.children[0].innerHTML = "Disarm: wait 3 seconds...";
+                modal.style.display = "block";
+
+                setTimeout(function () {
+                    modal.style.display = "none";
+                }, 3000);
+            }
+            initialized_drone = false;
         });
 
         {#  responsive size of joystick  #}
@@ -99,8 +130,8 @@
 
         let current_yaw, current_throttle, current_roll, current_pitch = 0;
 
-        {# order: dx, dy #}
-        {# "attitude_right_roll,pitch" or "attitude_left_yaw,throttle"  #}
+        {# left joystick: x-axis = yaw; y-axis = throttle #}
+        {# right joystick: x-axis = roll; y-axis = pitch #}
 
         function joystick_yaw_percentage() {
             let yaw = ($('#dx-lj').text() / 2);
@@ -151,28 +182,30 @@
 
             $('#dx-lj').html((parseInt(Math.cos((Math.PI * data.angle.degree) / 180) * 101)) + 100);
             $('#dy-lj').html((parseInt(Math.sin((Math.PI * data.angle.degree) / 180) * 101)) + 100);
-            //ajax_command(joystick_left_percentage());
             let yaw = joystick_yaw_percentage();
             let throttle = joystick_throttle_percentage();
-            if (yaw >= 0) {
-                ajax_command("attitude_yaw_" + yaw);
-            }
-            if (throttle >= 0) {
-                ajax_command("attitude_throttle_" + throttle);
+            if (initialized_drone) {
+                if (yaw >= 0) {
+                    ajax_command("attitude_yaw_" + yaw);
+                }
+                if (throttle >= 0) {
+                    ajax_command("attitude_throttle_" + throttle);
+                }
             }
         });
 
         joystickLeft.on('end', function () {
             $('#dx-lj').html(100);
             $('#dy-lj').html(0);
-            //ajax_command(joystick_left_percentage());
             let yaw = joystick_yaw_percentage();
             let throttle = joystick_throttle_percentage();
-            if (yaw >= 0) {
-                ajax_command("attitude_yaw_" + yaw);
-            }
-            if (throttle >= 0) {
-                ajax_command("attitude_throttle_" + throttle);
+            if (initialized_drone) {
+                if (yaw >= 0) {
+                    ajax_command("attitude_yaw_" + yaw);
+                }
+                if (throttle >= 0) {
+                    ajax_command("attitude_throttle_" + throttle);
+                }
             }
         });
 
@@ -184,28 +217,30 @@
 
             $('#dx-rj').html((parseInt(Math.cos((Math.PI * data.angle.degree) / 180) * 101)) + 100);
             $('#dy-rj').html((parseInt(Math.sin((Math.PI * data.angle.degree) / 180) * 101)) + 100);
-            //ajax_command(joystick_right_percentage());
             let roll = joystick_roll_percentage();
             let pitch = joystick_pitch_percentage();
-            if (roll >= 0) {
-                ajax_command("attitude_roll_" + roll);
-            }
-            if (pitch >= 0) {
-                ajax_command("attitude_pitch_" + pitch);
+            if (initialized_drone) {
+                if (roll >= 0) {
+                    ajax_command("attitude_roll_" + roll);
+                }
+                if (pitch >= 0) {
+                    ajax_command("attitude_pitch_" + pitch);
+                }
             }
         });
 
         joystickRight.on('end', function () {
             $('#dx-rj').html(100);
             $('#dy-rj').html(100);
-            //ajax_command(joystick_right_percentage());
             let roll = joystick_roll_percentage();
             let pitch = joystick_pitch_percentage();
-            if (roll >= 0) {
-                ajax_command("attitude_roll_" + roll);
-            }
-            if (pitch >= 0) {
-                ajax_command("attitude_pitch_" + pitch);
+            if (initialized_drone) {
+                if (roll >= 0) {
+                    ajax_command("attitude_roll_" + roll);
+                }
+                if (pitch >= 0) {
+                    ajax_command("attitude_pitch_" + pitch);
+                }
             }
         });
 
