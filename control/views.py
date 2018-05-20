@@ -9,6 +9,12 @@ from .handlers.quadcopter_control import Drone
 drone = None
 
 
+def home_page(request):
+    template = loader.get_template('control/home_page.html')
+    context = {}
+    return HttpResponse(template.render(context, request))
+
+
 def index(request):
     template = loader.get_template('control/index.html')
     context = {}
