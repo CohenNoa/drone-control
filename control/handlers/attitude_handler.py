@@ -1,6 +1,6 @@
 import time
 
-debug_mode= False
+debug_mode = False
 try:
     import RPi.GPIO as GPIO
 except (RuntimeError, ImportError):
@@ -13,10 +13,15 @@ frequency = 50  # Hz
 
 class AttitudeHandler(object):
     def __init__(self, return_home, mode, pitch, yaw, roll, throttle):
-        if not debug_mode:
-            self.modes_names = {10: "Stabilize", 30: "FailSafe 1", 50: "Intellegent Orientation Control", 70: "FailSafe 2", 90: "GPS"}
-            self.modes = [10, 30, 50, 70, 90]
+        self.modes_names = {10: "Stabilize",
+                            30: "FailSafe 1",
+                            50: "Intellegent Orientation Control",
+                            70: "FailSafe 2",
+                            90: "GPS"}
 
+        self.modes = [10, 30, 50, 70, 90]
+
+        if not debug_mode:
             self.return_home_pin = return_home
             self.mode_pin = mode
             self.pitch_pin = pitch
@@ -52,8 +57,6 @@ class AttitudeHandler(object):
             self.yaw_pwm.start(self.middle_duty_cycle)
             self.roll_pwm.start(self.middle_duty_cycle)
             self.throttle_pwm.start(self.min_duty_cycle)
-
-
 
         print("Setup complete")
 
@@ -91,7 +94,7 @@ class AttitudeHandler(object):
         if not debug_mode:
             duty_cycle = self.get_duty_cycle(percent)
             if name == "pitch":
-                duty_cycle = self.get_duty_cycle(100-percent)
+                duty_cycle = self.get_duty_cycle(100 - percent)
                 self.pitch_pwm.start(duty_cycle)
             if name == "yaw":
                 self.yaw_pwm.start(duty_cycle)
@@ -113,4 +116,4 @@ class AttitudeHandler(object):
                 print("returning home")
             else:
                 self.return_home_pwm.start(self.get_duty_cycle(0))
-                print("business as ususal")
+                print("business as unusual")
