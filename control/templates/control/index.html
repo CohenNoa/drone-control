@@ -28,7 +28,22 @@
     {#  handle the joysticks  #}
     <div id="jLeft" class="zone"></div>
     <div id="jRight" class="zone"></div>
+
+    
+
     <section id="data-section">
+	    <div style="text-align:center; width:100%;">
+	    <center><div class="slidecontainer" style="width:70%;">
+	    <input type="range" min="0" max="4" value="0" class="slider" id="modeSlider">
+    </div></center>
+    </div>
+    <br><br>
+<div style="text-align:center; width:100%;">
+	    <center><div class="slidecontainer" style="width:70%;">
+	    <input type="range" min="0" max="1" value="0" class="slider" id="returnHomeSlider">
+    </div></center>
+    </div>
+    <br><br><br>
         <section id="left-joystick">
             <h1 id="left">Left</h1>
             <strong>dx: </strong>
@@ -48,6 +63,26 @@
         </section>
     </section>
     <script>
+let globalRoll = 0;
+let globalPitch = 0;
+let globalThrottle = 0;
+let globalYaw = 0;
+
+function throttleFunction(func, wait) {
+            var timeout;
+            return function () {
+                var context = this, args = arguments;
+                if (!timeout) {
+                    // the first time the event fires, we setup a timer, which
+                    // is used as a guard to block subsequent calls; once the
+                    // timer's handler fires, we reset it and create a new one
+                    timeout = setTimeout(function () {
+                        timeout = null;
+                        func.apply(context, args);
+                    }, wait);
+                }
+            }
+        }
 
         function sleep(milliseconds) {
             let start = new Date().getTime();
@@ -72,7 +107,7 @@
                     }
                 }
             });
-            sleep(10);
+            //sleep(10);
             {# 10 milliseconds = 0.01 seconds #}
             return false
         }
@@ -173,6 +208,57 @@
             return pitch;
         }
 
+let thrInterval = 250;
+let rollThr = throttleFunction(function() {ajax_command("attitude_roll_" + globalRoll);},thrInterval);
+let pitchThr = throttleFunction(function() {ajax_command("attitude_pitch_" + globalPitch);},thrInterval);
+let yawThr = throttleFunction(function() {ajax_command("attitude_yaw_" + globalYaw);},thrInterval);
+let throttleThr = throttleFunction(function() {ajax_command("attitude_throttle_" + globalThrottle);},thrInterval);
+
+
+$("#modeSlider").slider({
+	 slide: function (event, ui) {
+	 }
+ });
+$("#modeSlider").on("input", throttleFunction(function (event, ui) {
+	var number = $(this).val();
+        var command = "mode_" + number;
+        console.log(command);
+        //send_ajax_command(command);
+        ajax_command(command);
+}, thrInterval));
+ 
+             $("#modeSlider").on("change", function (event, ui) {
+                 var number = $(this).val();
+                 var command = "mode_" + number;
+                 console.log(command);
+                 //send_ajax_command(command);
+                 ajax_command(command);
+             });
+
+
+$("#returnHomeSlider").slider({
+	 slide: function (event, ui) {
+	 }
+ });
+$("#returnHomeSlider").on("input", throttleFunction(function (event, ui) {
+	var number = $(this).val();
+        var command = "return-home_" + number;
+        console.log(command);
+        //send_ajax_command(command);
+        ajax_command(command);
+}, thrInterval));
+ 
+             $("#returnHomeSlider").on("change", function (event, ui) {
+                 var number = $(this).val();
+                 var command = "retuen-home_" + number;
+                 console.log(command);
+                 //send_ajax_command(command);
+                 ajax_command(command);
+             });
+
+
+
+
         {# events types are end and move #}
         {#  values are between 0-200  #}
         joystickLeft.on('move', function (event, data) {
@@ -180,16 +266,18 @@
             {#console.log(event);#}
             {#console.log(data);#}
 
-            $('#dx-lj').html((parseInt(Math.cos((Math.PI * data.angle.degree) / 180) * 101)) + 100);
-            $('#dy-lj').html((parseInt(Math.sin((Math.PI * data.angle.degree) / 180) * 101)) + 100);
+            $('#dx-lj').html((parseInt(Math.cos(data.angle.radian) * (data.distance*202/R) + 100)));
+            $('#dy-lj').html((parseInt(Math.sin(data.angle.radian) * (data.distance*202/R) + 100)));
             let yaw = joystick_yaw_percentage();
             let throttle = joystick_throttle_percentage();
             if (initialized_drone) {
                 if (yaw >= 0) {
-                    ajax_command("attitude_yaw_" + yaw);
+			globalYaw = yaw;
+                        yawThr.apply(null, null);
                 }
                 if (throttle >= 0) {
-                    ajax_command("attitude_throttle_" + throttle);
+			globalThrottle = throttle;
+                        throttleThr.apply(null, null);
                 }
             }
         });
@@ -210,21 +298,26 @@
         });
 
 
+
+
         joystickRight.on('move', function (event, data) {
 
             {#console.log(event);#}
             {#console.log(data);#}
 
-            $('#dx-rj').html((parseInt(Math.cos((Math.PI * data.angle.degree) / 180) * 101)) + 100);
-            $('#dy-rj').html((parseInt(Math.sin((Math.PI * data.angle.degree) / 180) * 101)) + 100);
+            
+	    $('#dx-rj').html((parseInt(Math.cos(data.angle.radian) * (data.distance*202/R) + 100)));
+            $('#dy-rj').html((parseInt(Math.sin(data.angle.radian) * (data.distance*202/R) + 100)));
             let roll = joystick_roll_percentage();
             let pitch = joystick_pitch_percentage();
             if (initialized_drone) {
                 if (roll >= 0) {
-                    ajax_command("attitude_roll_" + roll);
+			globalRoll = roll;
+			rollThr.apply(null, null);
                 }
                 if (pitch >= 0) {
-                    ajax_command("attitude_pitch_" + pitch);
+			globalPitch = pitch;
+                        pitchThr.apply(null, null);
                 }
             }
         });
