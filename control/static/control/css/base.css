@@ -7,3 +7,8 @@ div {
     font-size: medium;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+h1 {
+    font-family: Courier New, serif;
+    color: white;
+}

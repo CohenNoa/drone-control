@@ -1,11 +1,22 @@
 import time
 
+print(r"""
+ ██████╗ ██╗     ██████╗ ██████╗  ██████╗ ███╗   ██╗███████╗
+ ██╔══██╗██║     ██╔══██╗██╔══██╗██╔═══██╗████╗  ██║██╔════╝
+ ██████╔╝██║     ██║  ██║██████╔╝██║   ██║██╔██╗ ██║█████╗  
+ ██╔═══╝ ██║     ██║  ██║██╔══██╗██║   ██║██║╚██╗██║██╔══╝  
+ ██║     ██║     ██████╔╝██║  ██║╚██████╔╝██║ ╚████║███████╗
+ ╚═╝     ╚═╝     ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+
+""")
+
+
 debug_mode = False
 try:
     import RPi.GPIO as GPIO
 except (RuntimeError, ImportError):
     debug_mode = True
-    print("GPIO module can only be run on a Raspberry Pi!")
+    print("GPIO module can only be run on a Raspberry Pi!\n\n")
 
 timeout = 3  # seconds
 frequency = 50  # Hz
@@ -110,10 +121,11 @@ class AttitudeHandler(object):
             self.mode_pwm.start(duty_cycle)
 
     def change_return_home(self, return_home):
-        if not debug_mode:
-            if return_home:
+        if return_home:
+            if not debug_mode:
                 self.return_home_pwm.start(self.get_duty_cycle(100))
-                print("returning home")
-            else:
+            print("returning home")
+        else:
+            if not debug_mode:
                 self.return_home_pwm.start(self.get_duty_cycle(0))
-                print("business as unusual")
+            print("business as unusual")

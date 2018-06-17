@@ -18,8 +18,9 @@ from django.conf.urls import include, url
 
 from control import views
 
-urlpatterns = {
+urlpatterns = [
+    url(r'^easy_rest', include('easy_rest.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.home_page, name='home-page'),
     url(r'control/', include('control.urls')),
-}
+]

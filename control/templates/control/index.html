@@ -69,6 +69,7 @@
             <div id="dy-rj"></div>
         </section>
     </section>
+
     <script>
 
         let globalRoll = 0;
@@ -142,7 +143,7 @@
             initialized_drone = false;
         });
 
-        {#  responsive size of joystick  #}
+        // responsive size of joystick
         let width = window.innerWidth;
         let R = parseInt(width) / 4;
 
@@ -164,8 +165,8 @@
 
         let current_yaw, current_throttle, current_roll, current_pitch = 0;
 
-        {# left joystick: x-axis = yaw; y-axis = throttle #}
-        {# right joystick: x-axis = roll; y-axis = pitch #}
+        // left joystick: x-axis = yaw; y-axis = throttle
+        // right joystick: x-axis = roll; y-axis = pitch
 
         function joystick_yaw_percentage() {
             let yaw = ($('#dx-lj').text() / 2);
@@ -208,7 +209,7 @@
         }
 
         let thrInterval = 250;
-        {# miliseconds #}
+        // miliseconds
 
         let rollThr = throttleFunction(function () {
             ajax_command("attitude_roll_" + globalRoll);
@@ -268,12 +269,12 @@
         });
 
 
-        {# events types are end and move #}
-        {#  values are between 0-200  #}
+        // events types are end and move
+        // values are between 0-200
         joystickLeft.on('move', function (event, data) {
 
-            {#console.log(event);#}
-            {#console.log(data);#}
+            // console.log(event);
+            // console.log(data);
 
             $('#dx-lj').html((parseInt(Math.cos(data.angle.radian) * (data.distance * 202 / R) + 100)));
             $('#dy-lj').html((parseInt(Math.sin(data.angle.radian) * (data.distance * 202 / R) + 100)));
@@ -309,8 +310,8 @@
 
         joystickRight.on('move', function (event, data) {
 
-            {#console.log(event);#}
-            {#console.log(data);#}
+            // console.log(event);
+            // console.log(data);
 
 
             $('#dx-rj').html((parseInt(Math.cos(data.angle.radian) * (data.distance * 202 / R) + 100)));
@@ -345,5 +346,6 @@
         });
 
     </script>
+
 
 {% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'control/base.html' %}
+{% load static %}
+{% load easy_rest %}
+
+{% block javascript %}
+    <script src="{% static 'control/js/Chart.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+
+    <h1 style="text-align: center; padding-bottom: 5px; padding-top: 5px;">Live Data</h1>
+    <div class="chart-container" style="position: relative; height:50vh; width:50vw">
+        <canvas id="chart"></canvas>
+    </div>
+    <script>
+        let requestHandler = new RequestHandler('/control/live_data/api');
+        let response = requestHandler.SendSync({"action": "get_attitude"});
+        console.log(response.data);
+
+        chart = new Chart($('#chart'), {
+            type: 'line',
+            data: {
+                labels: [0, 8,4,5,2,3],
+                datasets: [
+                    {
+                        data: [0, 3, 4, 5, 123],
+                        label: "Pitch",
+                        borderColor: "#53ffcc",
+                        fill: false
+                    }
+
+                ]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Drone Attitude',
+                    fontSize: 16
+                }
+            }
+        });
+    </script>
+{% endblock %}
