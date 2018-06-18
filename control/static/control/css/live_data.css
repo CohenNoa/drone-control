@@ -1,0 +1,13 @@
+h1, h2 {
+    text-align: center;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.row {
+    padding-top: 7px;
+}
+
+canvas {
+    padding-left: 10px;
+}

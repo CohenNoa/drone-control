@@ -2,29 +2,94 @@
 {% load static %}
 {% load easy_rest %}
 
+{% block stylesheet %}
+    <link rel="stylesheet" type="text/css" href="{% static 'control/css/live_data.css' %}">
+{% endblock %}
+
 {% block javascript %}
     <script src="{% static 'control/js/Chart.js' %}"></script>
 {% endblock %}
 
 {% block content %}
 
-    <h1 style="text-align: center; padding-bottom: 5px; padding-top: 5px;">Live Data</h1>
-    <div class="chart-container" style="position: relative; height:50vh; width:50vw">
-        <canvas id="chart"></canvas>
-    </div>
-    <script>
-        let requestHandler = new RequestHandler('/control/live_data/api');
-        let response = requestHandler.SendSync({"action": "get_attitude"});
-        console.log(response.data);
+    <h1>Live Data</h1>
+    <h2>Drone Attitude</h2>
 
-        chart = new Chart($('#chart'), {
+    <div class="row">
+        <div id="attitude-live-chart" class="col-md-5 col-lg-5">
+            <canvas id="chart-throttle" width="500" height="300"></canvas>
+        </div>
+        <div id="attitude-live-chart" class="col-md-5 col-lg-5">
+            <canvas id="chart-yaw" width="500" height="300"></canvas>
+        </div>
+    </div>
+
+    <div class="row">
+        <div id="attitude-live-chart" class="col-md-5 col-lg-5">
+            <canvas id="chart-pitch" width="500" height="300"></canvas>
+        </div>
+        <div id="attitude-live-chart" class="col-md-5 col-lg-5">
+            <canvas id="chart-roll" width="500" height="300"></canvas>
+        </div>
+    </div>
+
+    <script>
+
+        let throttle_last_value, yaw_last_value, pitch_last_value, roll_last_value = 1000;
+
+        setInterval(function () {
+            let requestHandler = new RequestHandler('/control/live_data/api');
+            let response = requestHandler.SendSync({"action": "get_attitude"});
+            if (response.data['attitude'].length > 0) {
+                let value = response.data['attitude'].slice(-1)[0].slice(-1)[0];
+                let name = response.data['attitude'].slice(-1)[0].slice(-2)[0];
+                if (name === "throttle") {
+                    if (value !== throttle_last_value) {
+                        addData(throttle_chart, update_label(throttle_chart), value);
+                        throttle_last_value = value;
+                    }
+
+                }
+                else if (name === "yaw") {
+                    if (value !== yaw_last_value) {
+                        addData(yaw_chart, update_label(yaw_chart), value);
+                        yaw_last_value = value;
+                    }
+                }
+                else if (name === "pitch") {
+                    if (value !== pitch_last_value) {
+                        addData(pitch_chart, update_label(pitch_chart), value);
+                        pitch_last_value = value;
+                    }
+                }
+                else if (value !== roll_last_value) {
+                    addData(roll_chart, update_label(roll_chart), value);
+                    roll_last_value = value;
+                }
+            }
+        }, 200);
+
+        function addData(chart, label, data) {
+            chart.data.labels.push(label);
+            chart.data.datasets.forEach((dataset) => {
+                dataset.data.push(data);
+            });
+            chart.update();
+        }
+
+        function update_label(chart) {
+            return chart.data.labels.slice(-1)[0] + 1
+        }
+
+
+        throttle_chart = new Chart($('#chart-throttle'), {
             type: 'line',
             data: {
-                labels: [0, 8,4,5,2,3],
+                labels: [0],
                 datasets: [
                     {
-                        data: [0, 3, 4, 5, 123],
-                        label: "Pitch",
+                        data: [0],
+                        label: "Throttle",
                         borderColor: "#53ffcc",
                         fill: false
                     }
@@ -34,10 +99,81 @@
             options: {
                 title: {
                     display: true,
-                    text: 'Drone Attitude',
+                    text: 'Throttle',
                     fontSize: 16
                 }
             }
         });
+
+        yaw_chart = new Chart($('#chart-yaw'), {
+            type: 'line',
+            data: {
+                labels: [0],
+                datasets: [
+                    {
+                        data: [0],
+                        label: "Yaw",
+                        borderColor: "#3e95cd",
+                        fill: false
+                    }
+
+                ]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Yaw',
+                    fontSize: 16
+                }
+            }
+        });
+
+        pitch_chart = new Chart($('#chart-pitch'), {
+            type: 'line',
+            data: {
+                labels: [0],
+                datasets: [
+                    {
+                        data: [0],
+                        label: "Pitch",
+                        borderColor: "#8e5ea2",
+                        fill: false
+                    }
+
+                ]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Pitch',
+                    fontSize: 16
+                }
+            }
+        });
+
+        roll_chart = new Chart($('#chart-roll'), {
+            type: 'line',
+            data: {
+                labels: [0],
+                datasets: [
+                    {
+                        data: [0],
+                        label: "Roll",
+                        borderColor: "#c45850",
+                        fill: false
+                    }
+
+                ]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Roll',
+                    fontSize: 16
+                }
+            }
+        });
+
+
     </script>
 {% endblock %}

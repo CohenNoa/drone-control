@@ -6,11 +6,13 @@ from easy_rest.views import RestApiView
 
 from .handlers.quadcopter_control import Drone
 
+import time
+
 # Create your views here.
 
 drone = None
 attitude = []
-attitude_len = 400
+attitude_len = 100
 
 
 def home_page(request):
@@ -35,24 +37,48 @@ class AttitudeGraphApiView(RestApiView):
     function_field_name = "action"
     api_allowed_methods = ["get_attitude"]
 
-    def get_attitude(self, data):
+    @staticmethod
+    def get_attitude(data):
         return {"attitude": attitude}
 
 
 def run_code(request):
     global drone
+    global attitude
     command = request.GET.get('command', None)
     if command == 'start' and not drone:
         drone = Drone()
         drone.arm()
+        attitude = []
+
+        build_data(['attitude', 'pitch', '0'])
+        time.sleep(0.2)
+        build_data(['attitude', 'yaw', '100'])
+        time.sleep(0.2)
+        build_data(['attitude', 'roll', '0'])
+        time.sleep(0.2)
+        build_data(['attitude', 'throttle', '0'])
+        time.sleep(0.2)
+
     if command == 'stop' and drone:
         drone.disarm()
         drone = None
+
+        build_data(['attitude', 'pitch', '0'])
+        time.sleep(0.2)
+        build_data(['attitude', 'yaw', '0'])
+        time.sleep(0.2)
+        build_data(['attitude', 'roll', '100'])
+        time.sleep(0.2)
+        build_data(['attitude', 'throttle', '0'])
+        time.sleep(0.2)
+
+        attitude = []
+
     error = None
     try:
         if drone and command not in ["start", "stop"]:
             build_data(command.split("_"))
-            print(attitude)
             drone.run_command(command)
     except NameError as err:
         error = 'Drone not initialized: ' + str(err)
