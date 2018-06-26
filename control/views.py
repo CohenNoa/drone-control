@@ -12,7 +12,8 @@ import time
 
 drone = None
 attitude = []
-attitude_len = 100
+attitude_len = 100  # keeps the last attitude_len values
+timeout = 0.2  # api refresh timeout
 
 
 def home_page(request):
@@ -39,6 +40,10 @@ class AttitudeGraphApiView(RestApiView):
 
     @staticmethod
     def get_attitude(data):
+        """
+        :param data:
+        :return: dictionary of the last 100 values
+        """
         return {"attitude": attitude}
 
 
@@ -51,33 +56,36 @@ def run_code(request):
         drone.arm()
         attitude = []
 
+        # updates graph on arm
         build_data(['attitude', 'pitch', '0'])
-        time.sleep(0.2)
+        time.sleep(timeout)
         build_data(['attitude', 'yaw', '100'])
-        time.sleep(0.2)
+        time.sleep(timeout)
         build_data(['attitude', 'roll', '0'])
-        time.sleep(0.2)
+        time.sleep(timeout)
         build_data(['attitude', 'throttle', '0'])
-        time.sleep(0.2)
+        time.sleep(timeout)
 
     if command == 'stop' and drone:
         drone.disarm()
         drone = None
 
+        # updates graph on disarm
         build_data(['attitude', 'pitch', '0'])
-        time.sleep(0.2)
+        time.sleep(timeout)
         build_data(['attitude', 'yaw', '0'])
-        time.sleep(0.2)
+        time.sleep(timeout)
         build_data(['attitude', 'roll', '100'])
-        time.sleep(0.2)
+        time.sleep(timeout)
         build_data(['attitude', 'throttle', '0'])
-        time.sleep(0.2)
+        time.sleep(timeout)
 
         attitude = []
 
     error = None
     try:
         if drone and command not in ["start", "stop"]:
+            # action is something else then button click
             build_data(command.split("_"))
             drone.run_command(command)
     except NameError as err:
@@ -90,6 +98,11 @@ def run_code(request):
 
 
 def build_data(new_data):
+    """
+    adds new piece of data to attitude list
+    :param new_data:
+    :return:
+    """
     global attitude
     if len(attitude) < attitude_len:
         attitude.append(new_data)

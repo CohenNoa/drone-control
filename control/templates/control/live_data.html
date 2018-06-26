@@ -37,39 +37,45 @@
 
     <script>
 
-        let throttle_last_value, yaw_last_value, pitch_last_value, roll_last_value = 1000;
+        let throttleLastValue, yawLastValue, pitchLastValue, rollLastValue = 1000; // to check if change detected
 
         setInterval(function () {
             let requestHandler = new RequestHandler('/control/live_data/api');
-            let response = requestHandler.SendSync({"action": "get_attitude"});
+            let response = requestHandler.SendSync({"action": "get_attitude"}); // the data from the server
+            // example of response: [attitude, yaw, 34]
             if (response.data['attitude'].length > 0) {
-                let value = response.data['attitude'].slice(-1)[0].slice(-1)[0];
+                // there's a data from the server
+
+                // slice(-1)[0] gets the last item in the array
+                let value = response.data['attitude'].slice(-1)[0].slice(-1)[0]; // percentage
                 let name = response.data['attitude'].slice(-1)[0].slice(-2)[0];
+
+                // update graph on change
                 if (name === "throttle") {
-                    if (value !== throttle_last_value) {
-                        addData(throttle_chart, update_label(throttle_chart), value);
-                        throttle_last_value = value;
+                    if (value !== throttleLastValue) {
+                        addData(throttleChart, updateLabel(throttleChart), value);
+                        throttleLastValue = value;
                     }
 
                 }
                 else if (name === "yaw") {
-                    if (value !== yaw_last_value) {
-                        addData(yaw_chart, update_label(yaw_chart), value);
-                        yaw_last_value = value;
+                    if (value !== yawLastValue) {
+                        addData(yawChart, updateLabel(yawChart), value);
+                        yawLastValue = value;
                     }
                 }
                 else if (name === "pitch") {
-                    if (value !== pitch_last_value) {
-                        addData(pitch_chart, update_label(pitch_chart), value);
-                        pitch_last_value = value;
+                    if (value !== pitchLastValue) {
+                        addData(pitchChart, updateLabel(pitchChart), value);
+                        pitchLastValue = value;
                     }
                 }
-                else if (value !== roll_last_value) {
-                    addData(roll_chart, update_label(roll_chart), value);
-                    roll_last_value = value;
+                else if (value !== rollLastValue) {
+                    addData(rollChart, updateLabel(rollChart), value);
+                    rollLastValue = value;
                 }
             }
-        }, 200);
+        }, 200); // 200 milliseconds = 0.2 seconds
 
         function addData(chart, label, data) {
             chart.data.labels.push(label);
@@ -79,12 +85,13 @@
             chart.update();
         }
 
-        function update_label(chart) {
+        function updateLabel(chart) {
+            // increase the chart label in 1
             return chart.data.labels.slice(-1)[0] + 1
         }
 
 
-        throttle_chart = new Chart($('#chart-throttle'), {
+        throttleChart = new Chart($('#chart-throttle'), {
             type: 'line',
             data: {
                 labels: [0],
@@ -107,7 +114,7 @@
             }
         });
 
-        yaw_chart = new Chart($('#chart-yaw'), {
+        yawChart = new Chart($('#chart-yaw'), {
             type: 'line',
             data: {
                 labels: [0],
@@ -130,7 +137,7 @@
             }
         });
 
-        pitch_chart = new Chart($('#chart-pitch'), {
+        pitchChart = new Chart($('#chart-pitch'), {
             type: 'line',
             data: {
                 labels: [0],
@@ -153,7 +160,7 @@
             }
         });
 
-        roll_chart = new Chart($('#chart-roll'), {
+        rollChart = new Chart($('#chart-roll'), {
             type: 'line',
             data: {
                 labels: [0],
