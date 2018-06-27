@@ -1,0 +1,9 @@
+{% extends 'control/base.html' %}
+{% load static %}
+
+{% block content %}
+    <center>
+        <h1 style="padding-top: 200px;">You must login before access this page!</h1>
+        <a href="{% url 'homepage' %}" class="btn btn-primary">back to home page</a>
+    </center>
+{% endblock %}

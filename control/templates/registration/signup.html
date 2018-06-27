@@ -1,0 +1,16 @@
+{% extends 'control/base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" type="text/css" href="{% static 'control/css/registration.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h1 class="panther">Sign up</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-primary" type="submit">Sign up</button>
+        <span id="account">Already have an account? <a href="{% url 'login' %}">Login</a></span>
+    </form>
+{% endblock %}

@@ -6,9 +6,21 @@
 {% endblock %}
 
 {% block content %}
-    <h1 id="welcome">Welcome to PiDrone</h1>
+    {% if user.is_authenticated %}
+        <h1 id="welcome">Welcome {{ user }} to PiDrone</h1>
+    {% else %}
+        <h1 id="welcome">Welcome to PiDrone</h1>
+    {% endif %}
     <div id="btn-section">
-        <button type="button" class="btn btn-purple" onclick="location.href='control/'">Fly!</button>
-        <button type="button" class="btn btn-cyan" onclick="location.href='control/live_data'">Live Data</button>
+        <a href="{% url 'index' %}" class="btn btn-purple">Fly!</a>
+        <a href="{% url 'live_data' %}" class="btn btn-cyan">Live Data</a>
+    </div>
+    <div id="btn-section">
+        {% if not user.is_authenticated %}
+            <a href="{% url 'login' %}?next={% url 'homepage' %}" class="btn btn-deep-orange">Login</a>
+            <a href="{% url 'signup' %}?next={% url 'homepage' %}" class="btn btn-pink">Sign up</a>
+        {% else %}
+            <a href="{% url 'logout' %}?next={% url 'homepage' %}" class="btn btn-amber">Logout</a>
+        {% endif %}
     </div>
 {% endblock %}

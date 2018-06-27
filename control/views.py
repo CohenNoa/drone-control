@@ -1,6 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from django.template import loader
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import render, redirect, reverse
+from django.contrib.auth.models import User
+from django.contrib.sessions.models import Session
+from django.utils import timezone
 
 from easy_rest.views import RestApiView
 
@@ -16,6 +22,21 @@ attitude_len = 100  # keeps the last attitude_len values
 timeout = 0.2  # api refresh timeout
 
 
+def signup(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            login(request, user)
+            return redirect(reverse("homepage"))
+    else:
+        form = UserCreationForm()
+    return render(request, 'registration/signup.html', {'form': form})
+
+
 def home_page(request):
     template = loader.get_template('control/home_page.html')
     context = {}
@@ -23,13 +44,19 @@ def home_page(request):
 
 
 def index(request):
-    template = loader.get_template('control/index.html')
+    if request.user.is_authenticated:
+        template = loader.get_template('control/index.html')
+    else:
+        template = loader.get_template('control/404.html')
     context = {}
     return HttpResponse(template.render(context, request))
 
 
 def live_data(request):
-    template = loader.get_template('control/live_data.html')
+    if request.user.is_authenticated:
+        template = loader.get_template('control/live_data.html')
+    else:
+        template = loader.get_template('control/404.html')
     context = {}
     return HttpResponse(template.render(context, request))
 

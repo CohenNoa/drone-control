@@ -10,5 +10,8 @@ div {
 
 h1, h2 {
     font-family: Courier New, serif;
+}
+
+h1, h2, span, label, li {
     color: white;
 }
