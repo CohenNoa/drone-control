@@ -4,9 +4,6 @@ from django.template import loader
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect, reverse
-from django.contrib.auth.models import User
-from django.contrib.sessions.models import Session
-from django.utils import timezone
 
 from easy_rest.views import RestApiView
 
@@ -20,6 +17,8 @@ drone = None
 attitude = []
 attitude_len = 100  # keeps the last attitude_len values
 timeout = 0.2  # api refresh timeout
+index_online_users = []  # saves the current user's ip that connect index page
+INDEX_ONLINE = 1  # number of users that can use the index page at the same time
 
 
 def signup(request):
@@ -46,18 +45,22 @@ def home_page(request):
 def index(request):
     if request.user.is_authenticated:
         template = loader.get_template('control/index.html')
+        context = {}
     else:
-        template = loader.get_template('control/404.html')
-    context = {}
+        template = loader.get_template('control/error.html')
+        context = {'header': '403 Access Denied',
+                   'data': 'You are not authorized to access this page'}
     return HttpResponse(template.render(context, request))
 
 
 def live_data(request):
     if request.user.is_authenticated:
         template = loader.get_template('control/live_data.html')
+        context = {}
     else:
-        template = loader.get_template('control/404.html')
-    context = {}
+        template = loader.get_template('control/error.html')
+        context = {'header': '403 Access Denied',
+                   'data': 'You are not authorized to access this page'}
     return HttpResponse(template.render(context, request))
 
 
@@ -75,6 +78,11 @@ class AttitudeGraphApiView(RestApiView):
 
 
 def run_code(request):
+    """
+    handles ajax command from index page
+    :param request:
+    :return:
+    """
     global drone
     global attitude
     command = request.GET.get('command', None)
@@ -108,6 +116,20 @@ def run_code(request):
         time.sleep(timeout)
 
         attitude = []
+
+    if command == "connect":
+        # user login index page
+        ip_addr = request.META['REMOTE_ADDR']  # IPv4 address
+        if ip_addr not in index_online_users:
+            index_online_users.append(ip_addr)
+        if len(index_online_users) > INDEX_ONLINE:
+            return JsonResponse({'success': False, 'error': 'error'})  # too many users use the template
+        return JsonResponse({'success': True})  # user can get the template
+
+    if command == "disconnect":
+        # user logout index page
+        ip_addr = request.META['REMOTE_ADDR']  # IPv4 address
+        index_online_users.remove(ip_addr)
 
     error = None
     try:

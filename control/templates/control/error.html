@@ -1,0 +1,14 @@
+{% extends 'control/base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" type="text/css" href="{% static 'control/css/error.css' %}">
+{% endblock %}
+
+{% block content %}
+    <center>
+        <h1 id="header">{{ header }}</h1>
+        <h1 id="data">{{ data }}</h1>
+        <a href="{% url 'homepage' %}" class="btn btn-primary">Back to home page</a>
+    </center>
+{% endblock %}

@@ -97,6 +97,7 @@
         // start
         // mode_3
         // return-home_0
+        // connect
         function ajaxCommand(command) {
             $.ajax({
                 type: "GET",
@@ -107,13 +108,37 @@
                 dataType: 'json',
                 success: function (data) {
                     if (!data.success) {
-                        alert("Error communication")
+                        if (data.error) {
+                            alert("One user is already using this page");
+                            location.href = "/"; // redirect to homepage
+                        }
+                        else {
+                            alert("Error communication"); // drone communication problem
+                        }
                     }
                 }
             });
 
             return false
         }
+
+        $(document).ready(function () {
+            ajaxCommand("connect");
+        });
+
+        // close window event
+        $(window).on('beforeunload', function () {
+            ajaxCommand("disconnect");
+        });
+
+        // using phone
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            // click tabs button
+            $(window).blur(function () {
+                ajaxCommand("disconnect");
+            });
+        }
+
 
         // enables sending data when stop button clicked and when start button didn't clicked
         let initializedDrone = false;
