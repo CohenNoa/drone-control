@@ -79,8 +79,12 @@ class AttitudeHandler(object):
     @staticmethod
     def get_duty_cycle(percentage):
         """
+        FC expects to PWM signal length between 1000 microseconds - 2000 microseconds
+        period time = 1 / frequency = 0.02 seconds
+        5% of 0.02 seconds equal 1000 microseconds or 1 milliseconds
+        10% of 0.02 seconds equal 2000 microseconds or 2 milliseconds
         :param percentage:
-        :return: volts between 0 to 5
+        :return: PWM signa length between 5% - 10%
         """
         return (percentage / 20) + 5
 
