@@ -21,7 +21,7 @@ from control import views
 
 urlpatterns = [
     url(r'^easy_rest', include('easy_rest.urls')),
-    url(r'^admin/', admin.site.urls),
+    url(r'^admin/', admin.site.urls, name='admin'),
     url(r'^$', views.home_page, name='homepage'),
     url(r'control/', include('control.urls'), name='control'),
 

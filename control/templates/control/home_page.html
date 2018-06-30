@@ -6,7 +6,9 @@
 {% endblock %}
 
 {% block content %}
-    {% if user.is_authenticated %}
+    {% if user.is_superuser %}
+        <h1 id="welcome">Welcome Admin to PiDrone</h1>
+    {% elif user.is_authenticated %}
         <h1 id="welcome">Welcome {{ user }} to PiDrone</h1>
     {% else %}
         <h1 id="welcome">Welcome to PiDrone</h1>
@@ -20,6 +22,9 @@
             <a href="{% url 'login' %}?next={% url 'homepage' %}" class="btn btn-deep-orange">Login</a>
             <a href="{% url 'signup' %}?next={% url 'homepage' %}" class="btn btn-pink">Sign up</a>
         {% else %}
+            {% if user.is_superuser %}
+                <a href="{% url 'admin:login' %}" class="btn btn-indigo">Admin Page</a>
+            {% endif %}
             <a href="{% url 'logout' %}?next={% url 'homepage' %}" class="btn btn-amber">Logout</a>
         {% endif %}
     </div>
