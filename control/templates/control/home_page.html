@@ -7,7 +7,7 @@
 
 {% block content %}
     {% if user.is_superuser %}
-        <h1 id="welcome">Welcome Admin to PiDrone</h1>
+        <h1 id="welcome">Welcome Admin</h1>
     {% elif user.is_authenticated %}
         <h1 id="welcome">Welcome {{ user }} to PiDrone</h1>
     {% else %}
