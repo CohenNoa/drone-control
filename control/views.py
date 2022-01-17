@@ -43,24 +43,24 @@ def home_page(request):
 
 
 def index(request):
-    if request.user.is_authenticated:
-        template = loader.get_template('control/index.html')
-        context = {}
-    else:
-        template = loader.get_template('control/error.html')
-        context = {'header': '403 Access Denied',
-                   'data': 'You are not authorized to access this page'}
+    # if request.user.is_authenticated:
+    template = loader.get_template('control/index.html')
+    context = {}
+    # else:
+    #     template = loader.get_template('control/error.html')
+    #     context = {'header': '403 Access Denied',
+    #                'data': 'You are not authorized to access this page'}
     return HttpResponse(template.render(context, request))
 
 
 def live_data(request):
-    if request.user.is_authenticated:
-        template = loader.get_template('control/live_data.html')
-        context = {}
-    else:
-        template = loader.get_template('control/error.html')
-        context = {'header': '403 Access Denied',
-                   'data': 'You are not authorized to access this page'}
+    # if request.user.is_authenticated:
+    template = loader.get_template('control/live_data.html')
+    context = {}
+    # else:
+    #     template = loader.get_template('control/error.html')
+    #     context = {'header': '403 Access Denied',
+    #                'data': 'You are not authorized to access this page'}
     return HttpResponse(template.render(context, request))
 
 
